@@ -1,0 +1,83 @@
+.sub-panel {
+  position: absolute;
+  height: 10vh;
+  width: 100%;
+  background-color: $light-color;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 999;
+  ul {
+    display: flex;
+    margin: 0 100px;
+    align-items: center;
+    @media screen and (max-width: 1200px) {
+      margin: 0 50px;
+    }
+    @media screen and (max-width: 800px) {
+      margin: 0 20px;
+    }
+    li {
+      display: inline;
+      position: relative;
+      margin: 0 20px;
+      @media screen and (max-width: 800px) {
+        margin: 0 10px;
+      }
+      @media screen and (max-width: 620px) {
+        margin: 0 5px;
+      }
+      a {
+        display: inline;
+        color: $text-color;
+        cursor: pointer;
+        &:after {
+          display: block;
+          content: attr(datatext);
+          height: 0;
+          visibility: hidden;
+          overflow: hidden;
+          pointer-events: none;
+          user-select: none;
+          font-weight: 700;
+        }
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        display: block;
+        background: black;
+        height: 2px;
+        width: 0%;
+        transition: all ease 0.3s;
+      }
+      &:hover::before {
+        width: 100%;
+      }
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+  button {
+    width: 15%;
+    margin-left: auto;
+    margin-right: 100px;
+    @media screen and (max-width: 1200px) {
+      margin-right: 50px;
+    }
+    @media screen and (max-width: 800px) {
+      margin-right: 50px;
+    }
+    @media screen and (max-width: 620px) {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.sticky {
+  position: fixed;
+  top: 0;
+}

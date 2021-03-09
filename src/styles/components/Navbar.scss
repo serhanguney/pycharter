@@ -1,0 +1,24 @@
+#navbar {
+  position: absolute;
+  z-index: 999;
+  width: 100vw;
+  height: 8vh;
+  background-color: rgba(255, 255, 255, 0.75);
+  display: flex;
+  align-items: center;
+  h2 {
+    font-size: 20px;
+    margin-left: 50px;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: auto;
+    margin-right: 100px;
+    padding: 10px 0;
+    a {
+      margin: 0 30px;
+    }
+  }
+}

@@ -1,0 +1,107 @@
+@import "./variables.scss";
+@import "./pages/Fleet.scss";
+@import "./components/Navbar.scss";
+@import "./components/SubPanel.scss";
+@import "./components/fleet/Slider.scss";
+@import "./components/fleet/Reviews.scss";
+@import "./components/fleet/CallToAction.scss";
+@import "./components/fleet/OtherBoats.scss";
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  overflow-x: hidden;
+  font-family: "Comfortaa", cursive;
+}
+body {
+  position: relative;
+  margin: 0;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: $text-color;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 1em, 0;
+  color: $text-color;
+}
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+//GLOBAL CLASSES
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  @media screen and (max-width: 620px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.primary-button {
+  height: 45px;
+  box-shadow: 0 0 12px #0091b13f;
+  border-radius: 48px;
+  background: linear-gradient(90deg, $main-color, $light-color);
+  color: white;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+    height: 30px;
+  }
+}
+.secondary-button {
+  height: 45px;
+  box-shadow: 0 0 12px #0091b13f;
+  border-radius: 48px;
+  background-color: $lightest-color;
+  color: $main-color;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+    height: 30px;
+  }
+}
+//FONTS
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+}
+h2 {
+  font-size: 36px;
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+}
+h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+}
+h1,
+h2 {
+  @media screen and (max-width: 620px) {
+    font-size: 32px;
+  }
+}
+p,
+li,
+a {
+  font-size: 14px;
+  @media screen and (max-width: 1200px) {
+    font-size: 12px;
+  }
+}
