@@ -8,6 +8,7 @@ export default function OtherBoats() {
       <span className="title">
         <h1>Other Boats</h1>
       </span>
+
       {fleet.map((boat, index) => (
         <div key={index} className="boat-card">
           <div className="image-container">
