@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import { Portfolio } from "../context";
+import { Portfolio } from "../../context";
 
 export default function SubPanel() {
   const [sticky, setSticky] = useState(false);

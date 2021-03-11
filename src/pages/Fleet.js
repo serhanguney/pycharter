@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Navbar from "../components/Navbar";
-import SubPanel from "../components/SubPanel";
+import SubPanel from "../components/fleet/SubPanel";
 import Slider from "../components/fleet/Slider";
 import { fleet } from "../boats/boats";
 import { useParams } from "react-router-dom";
