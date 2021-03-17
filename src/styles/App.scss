@@ -9,6 +9,7 @@
 @import "./components/fleet/OtherBoats.scss";
 @import "./components/Modal.scss";
 @import "./components/fleet/Features.scss";
+@import "./components/fleet/Pagination.scss";
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
@@ -63,7 +64,7 @@ button {
   border-radius: 48px;
   background: linear-gradient(90deg, $main-color, $light-color);
   color: white;
-  a{
+  a {
     color: white;
   }
   @media screen and (max-width: 800px) {
@@ -112,7 +113,6 @@ a {
   }
 }
 
-
 //GLOBAL CLASSES
 .description {
   grid-column: 2/7;
@@ -125,25 +125,25 @@ a {
       margin: 10px 0;
     }
     @media screen and (max-width: 620px) {
-      h1,h2{
-        margin:0;
+      h1,
+      h2 {
+        margin: 0;
       }
-      h2{
+      h2 {
         font-size: 24px;
       }
-      ul{
-        li{
+      ul {
+        li {
           margin: 5px;
         }
       }
     }
-    
   }
   button {
     width: 33%;
     margin: 20px;
     @media screen and (max-width: 620px) {
-      width:45%;
+      width: 45%;
       margin: 20px 5px;
     }
   }
@@ -152,11 +152,27 @@ a {
   }
   @media screen and (max-width: 800px) {
     grid-column: 2/9;
-    
   }
   @media screen and (max-width: 620px) {
     grid-column: 1/-1;
     margin: 150px 20px 20px 20px;
     height: 50%;
+  }
+}
+.loading-page {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 }

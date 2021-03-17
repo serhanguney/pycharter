@@ -2,19 +2,20 @@ import React, { useEffect, useState, useRef, useContext } from "react";
 import ReactDom from "react-dom";
 import useSlider from "../../hooks/useSlider";
 import Modal from "../Modal";
-import { animate, motion, useMotionValue } from "framer-motion";
+import Pagination from "./Pagination";
+import { animate, motion } from "framer-motion";
 import { Portfolio } from "../../context";
 
 export default function Slider({ images }) {
   //create a state and fetch its reducers using custom hook
-  const { slide, nextSlide, previousSlide } = useSlider();
+  const { slide, nextSlide, previousSlide, slideMotionValue } = useSlider();
 
   const {
     dimensions: { width },
   } = useContext(Portfolio);
 
   let gallery = useRef(null);
-  const slideMotionValue = useMotionValue(0);
+  // const slideMotionValue = useMotionValue(0);
   const motionTransition = { duration: 0.8, ease: [0.79, 0.14, 0.15, 0.86] };
 
   //for scaling
@@ -24,16 +25,6 @@ export default function Slider({ images }) {
       scale: Math.max(1, (i - slide.no) * 0.2 + 1),
       transition: motionTransition,
     }),
-  };
-  const paginationVariants = {
-    initial: {
-      scale: 1,
-      backgroundColor: "#ffffff",
-    },
-    animate: {
-      scale: 1.3,
-      backgroundColor: "#0092b2",
-    },
   };
 
   //can't use the reducer for modal because it triggers the useeffect unnecessarily
@@ -46,18 +37,9 @@ export default function Slider({ images }) {
   function handleClick(e) {
     if (!slideMotionValue.isAnimating()) {
       if (e.target.name === "previous" && slide.no > 0) {
-        previousSlide(0);
-        const width = gallery.children[0].getBoundingClientRect().width;
-        const previousValue = slideMotionValue.get();
-
-        // const scaleRatio = Array.from(gallery.children).map((item,index)=> )
-        animate(slideMotionValue, previousValue + width, motionTransition);
+        previousSlide(0, gallery.children[0]);
       } else if (e.target.name === "next" && slide.no < images.length - 1) {
-        nextSlide(images.length);
-
-        const width = gallery.children[0].getBoundingClientRect().width;
-        const previousValue = slideMotionValue.get();
-        animate(slideMotionValue, previousValue - width, motionTransition);
+        nextSlide(images.length, gallery.children[0]);
       }
     }
   }
@@ -78,7 +60,7 @@ export default function Slider({ images }) {
             motionTransition
           );
     }
-  }, [width]);
+  }, [width, motionTransition]);
   return (
     <div className="slider">
       <div ref={(el) => (gallery = el)} className="gallery">
@@ -105,19 +87,7 @@ export default function Slider({ images }) {
         <button name="previous" onClick={(e) => handleClick(e)}>{`<`}</button>
         <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
       </div>
-      <div className="pagination">
-        {images.map((el, i) => (
-          <motion.span
-            custom={i}
-            initial="initial"
-            animate={i === slide.no ? "animate" : "initial"}
-            variants={paginationVariants}
-            transition={{ duration: 0.4, ease: [0.68, -0.55, 0.27, 1.55] }}
-            key={i}
-            name={el}
-          ></motion.span>
-        ))}
-      </div>
+      <Pagination slide={slide} array={images} />
       {ReactDom.createPortal(
         <Modal open={modal} close={() => setModal(false)}>
           <div className="image-container">

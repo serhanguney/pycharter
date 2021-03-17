@@ -75,6 +75,7 @@ export default function SubPanel() {
             <a
               name={item.toLowerCase()}
               datatext={item}
+              href={`#${item.toLowerCase()}`}
               onClick={(e) => handleClick(e)}
             >
               {item}

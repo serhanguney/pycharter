@@ -18,14 +18,21 @@
       ul {
         li {
           color: $main-color;
+          display: flex;
+          align-items: center;
+          span {
+            width: 13px;
+            height: 13px;
+            border-radius: 7px;
+            border: 1px solid $main-color;
+            margin: 0 10px;
+          }
         }
       }
       @media screen and (max-width: 620px) {
         grid-column: span 4;
         margin-top: 30px;
-        * {
-          padding: 0 20px;
-        }
+        padding: 0 20px;
         ul {
           padding: 10px 0;
         }

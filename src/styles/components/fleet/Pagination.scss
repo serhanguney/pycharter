@@ -1,0 +1,17 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  @media screen and(max-width: 620px) {
+    grid-column: 1/-1;
+  }
+  span {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    border: 1px solid $main-color;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 30px;
+  }
+}

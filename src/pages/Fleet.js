@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Navbar from "../components/Navbar";
 import SubPanel from "../components/fleet/SubPanel";
 import Slider from "../components/fleet/Slider";
@@ -13,7 +13,6 @@ export default function Fleet() {
   const { boat } = useParams();
   const activeBoat = fleet.find((item) => item.name.toLowerCase() === boat);
   const {
-    name,
     title,
     subTitle,
     paragraph,
@@ -23,9 +22,7 @@ export default function Fleet() {
     coverImage,
     images,
   } = activeBoat;
-  useEffect(() => {
-    console.log(`You're viewing ${name}`);
-  }, [name]);
+
   return (
     <main id="fleet">
       <Navbar />
@@ -41,7 +38,7 @@ export default function Fleet() {
               <li>{specs.motor}</li>
             </ul>
           </div>
-          <button className="secondary-button">Request Callback</button>
+          <button className="secondary-button">Request callback</button>
           <button className="primary-button">View Gallery</button>
         </div>
         <SubPanel />
@@ -51,10 +48,20 @@ export default function Fleet() {
           <h1>{title}</h1>
           <h2>{subTitle}</h2>
           <ul>
-            <li>8 Guests</li>
-            <li>4 Cabins</li>
-            <li>Info</li>
-            <li>Info</li>
+            <li>
+              <span />8 Guests
+            </li>
+            <li>
+              <span />4 Cabins
+            </li>
+            <li>
+              <span />
+              Info
+            </li>
+            <li>
+              <span />
+              Info
+            </li>
           </ul>
           <p>{description}</p>
         </div>

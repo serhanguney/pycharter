@@ -1,6 +1,6 @@
 #reviews {
   grid-column: 1/-1;
-  background-color: $lightest-color;
+  background: linear-gradient(to right, $lightest-color, white);
   margin-top: 50px;
   .content {
     grid-column: 3/11;
