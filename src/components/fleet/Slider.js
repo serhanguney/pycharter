@@ -17,12 +17,23 @@ export default function Slider({ images }) {
   const slideMotionValue = useMotionValue(0);
   const motionTransition = { duration: 0.8, ease: [0.79, 0.14, 0.15, 0.86] };
 
+  //for scaling
   const imageVariants = {
     initial: { scale: 1 },
     animate: (i) => ({
-      scale: (i - slide.no) * 0.1 + 1,
+      scale: Math.max(1, (i - slide.no) * 0.2 + 1),
       transition: motionTransition,
     }),
+  };
+  const paginationVariants = {
+    initial: {
+      scale: 1,
+      backgroundColor: "#ffffff",
+    },
+    animate: {
+      scale: 1.3,
+      backgroundColor: "#0092b2",
+    },
   };
 
   //can't use the reducer for modal because it triggers the useeffect unnecessarily
@@ -96,11 +107,15 @@ export default function Slider({ images }) {
       </div>
       <div className="pagination">
         {images.map((el, i) => (
-          <span
+          <motion.span
+            custom={i}
+            initial="initial"
+            animate={i === slide.no ? "animate" : "initial"}
+            variants={paginationVariants}
+            transition={{ duration: 0.4, ease: [0.68, -0.55, 0.27, 1.55] }}
             key={i}
             name={el}
-            className={i === slide.no ? "active" : ""}
-          ></span>
+          ></motion.span>
         ))}
       </div>
       {ReactDom.createPortal(

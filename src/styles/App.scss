@@ -124,10 +124,28 @@ a {
     * {
       margin: 10px 0;
     }
+    @media screen and (max-width: 620px) {
+      h1,h2{
+        margin:0;
+      }
+      h2{
+        font-size: 24px;
+      }
+      ul{
+        li{
+          margin: 5px;
+        }
+      }
+    }
+    
   }
   button {
     width: 33%;
     margin: 20px;
+    @media screen and (max-width: 620px) {
+      width:45%;
+      margin: 20px 5px;
+    }
   }
   @media screen and (max-width: 1200px) {
     grid-column: 2/8;
@@ -138,6 +156,7 @@ a {
   }
   @media screen and (max-width: 620px) {
     grid-column: 1/-1;
-    margin: 200px 20px 20px 20px;
+    margin: 150px 20px 20px 20px;
+    height: 50%;
   }
 }

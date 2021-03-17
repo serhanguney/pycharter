@@ -1,15 +1,8 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
-import gsap, { Expo } from "gsap";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { Portfolio } from "../../context";
+import { animate, useMotionValue, motion } from "framer-motion";
 
 export default function SubPanel() {
-  const [sticky, setSticky] = useState(false);
-  const { dimensions } = useContext(Portfolio);
-  const ref = useRef(null);
-  let panelHeight = useRef(0);
-  let ctaButton = useRef(null);
-
   const features = [
     "Description",
     "Features",
@@ -17,6 +10,29 @@ export default function SubPanel() {
     "Reviews",
     "Interior",
   ];
+  const [sticky, setSticky] = useState(false);
+  const { dimensions } = useContext(Portfolio);
+  const subPanel = useRef(null);
+  let panelHeight = useRef(0);
+  let unsubscribe = useRef(null);
+
+  const scrollMotion = useMotionValue(0);
+  const buttonVariants = {
+    initial: {
+      opacity: 0,
+      skewY: 15,
+      y: 30,
+      visibility: "hidden",
+      transition: { visibility: { delay: 1 } },
+    },
+    animate: {
+      opacity: 1,
+      skewY: 0,
+      visibility: "visible",
+      y: 0,
+    },
+  };
+
   function handleScroll() {
     if (window.scrollY > dimensions.height - panelHeight.current) {
       setSticky(true);
@@ -25,56 +41,40 @@ export default function SubPanel() {
     }
   }
   function handleClick(e) {
-    gsap.fromTo(
-      window,
-      { scrollTo: window.scrollY },
-      {
-        scrollTo: { y: `#${e.target.name}`, offsetY: panelHeight.current },
-        ease: Expo.easeInOut,
-        duration: 2,
-      }
-    );
+    scrollMotion.set(window.scrollY);
+    const scrollTarget = document.getElementById(e.target.name);
+    const scrollPosition =
+      scrollTarget.getBoundingClientRect().top +
+      window.scrollY -
+      panelHeight.current;
+
+    animate(scrollMotion, scrollPosition, {
+      duration: 1,
+    });
   }
+  useEffect(() => {
+    unsubscribe.current = scrollMotion.onChange((value) => {
+      window.scrollTo({ top: value });
+    });
+  }, [scrollMotion]);
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
-  useEffect(() => gsap.registerPlugin(ScrollToPlugin), []);
   useEffect(() => {
-    panelHeight.current = ref.current.getBoundingClientRect().height;
+    panelHeight.current = subPanel.current.getBoundingClientRect().height;
   }, [dimensions]);
-  useEffect(() => {
-    if (dimensions.width > 620) {
-      if (sticky) {
-        gsap.to(ctaButton, {
-          autoAlpha: 1,
-          y: 0,
-          skewY: 0,
-          ease: Expo.easeInOut,
-          duration: 1,
-        });
-      } else {
-        gsap.to(ctaButton, {
-          autoAlpha: 0,
-          y: 15,
-          skewY: 2,
-          ease: Expo.easeInOut,
-          duration: 1,
-        });
-      }
-    }
-  }, [sticky, dimensions.width]);
+
   return (
-    <div className={`sub-panel ${sticky ? "sticky" : ""}`} ref={ref}>
+    <div className={`sub-panel ${sticky ? "sticky" : ""}`} ref={subPanel}>
       <ul>
         {features.map((item, index) => (
           <li key={index}>
             <a
               name={item.toLowerCase()}
               datatext={item}
-              href={`#${item.toLowerCase()}`}
               onClick={(e) => handleClick(e)}
             >
               {item}
@@ -83,12 +83,14 @@ export default function SubPanel() {
         ))}
       </ul>
       {dimensions.width > 620 && (
-        <button
-          ref={(el) => (ctaButton = el)}
-          className={`secondary-button ${sticky ? "fade-in" : "fade-out"}`}
+        <motion.button
+          initial="initial"
+          animate={sticky ? "animate" : "initial"}
+          variants={buttonVariants}
+          className="secondary-button"
         >
           Make an inquiry
-        </button>
+        </motion.button>
       )}
     </div>
   );

@@ -1,6 +1,7 @@
 .sub-panel {
   position: absolute;
   height: 10vh;
+  height: calc(var(--vh,1vh)* 10);
   width: 100%;
   background-color: $light-color;
   bottom: 0;

@@ -35,9 +35,11 @@ export default function Fleet() {
             <h1>{title}</h1>
             <h2>{subTitle}</h2>
             <p>{paragraph}</p>
-            <p>{specs.length}</p>
-            <p>{specs.capacity}</p>
-            <p>{specs.motor}</p>
+            <ul>
+              <li>{specs.length}</li>
+              <li>{specs.capacity}</li>
+              <li>{specs.motor}</li>
+            </ul>
           </div>
           <button className="secondary-button">Request Callback</button>
           <button className="primary-button">View Gallery</button>
