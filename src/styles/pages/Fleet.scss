@@ -10,44 +10,6 @@
     background: url("../../images/BG.jpg");
     background-size: cover;
     background-position: center;
-    .description {
-      grid-column: 2/7;
-      height: 50%;
-      margin: 200px 0 0 0;
-      background-color: rgba(255, 255, 255, 0.75);
-      padding: 20px;
-      .text-content {
-        height: 80%;
-        * {
-          margin: 10px 0;
-        }
-      }
-      button {
-        width: 40%;
-        margin: 0 5%;
-      }
-      @media screen and (max-width: 1200px) {
-        max-height: 450px;
-      }
-      @media screen and (max-width: 800px) {
-        max-height: 350px;
-        h1,
-        h2 {
-          font-size: 24px;
-        }
-        p {
-          font-size: 12px;
-        }
-        button {
-          width: 45%;
-          margin: 0 1%;
-        }
-      }
-      @media screen and (max-width: 620px) {
-        grid-column: 1/-1;
-        margin: 200px 20px 20px 20px;
-      }
-    }
   }
   #description {
     .text-content {
@@ -84,36 +46,7 @@
       }
     }
   }
-  #features {
-    grid-column: 1/-1;
-    background-color: $lightest-color;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 100px;
-    h1 {
-      padding: 20px 0;
-    }
-    .features-content {
-      position: relative;
-      display: flex;
-      width: 100%;
-      padding: 30px 0 50px 0;
-      justify-content: space-around;
-      @media screen and (max-width: 620px) {
-        justify-content: center;
-        overflow-x: auto;
-        ul {
-          width: 100%;
-          flex-shrink: 0;
-          text-align: center;
-        }
-      }
-    }
-    @media screen and (max-width: 620px) {
-      margin-top: 30px;
-    }
-  }
+
   #exterior {
     .title {
       grid-column: 6/8;

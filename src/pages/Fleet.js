@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import Reviews from "../components/fleet/Reviews";
 import CallToAction from "../components/fleet/CallToAction";
 import OtherBoats from "../components/fleet/OtherBoats";
+import Features from "../components/fleet/Features";
 
 export default function Fleet() {
   const { boat } = useParams();
@@ -17,7 +18,7 @@ export default function Fleet() {
     subTitle,
     paragraph,
     description,
-    capacity,
+    specs,
     features,
     coverImage,
     images,
@@ -34,7 +35,9 @@ export default function Fleet() {
             <h1>{title}</h1>
             <h2>{subTitle}</h2>
             <p>{paragraph}</p>
-            <p>{capacity}</p>
+            <p>{specs.length}</p>
+            <p>{specs.capacity}</p>
+            <p>{specs.motor}</p>
           </div>
           <button className="secondary-button">Request Callback</button>
           <button className="primary-button">View Gallery</button>
@@ -57,18 +60,7 @@ export default function Fleet() {
           <img src={coverImage} alt="coverImage" />
         </div>
       </section>
-      <section id="features">
-        <h1>Features</h1>
-        <div className="features-content">
-          {features.map((list, index) => (
-            <ul key={index}>
-              {list.map((el, i) => (
-                <li key={i}>{el}</li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </section>
+      <Features features={features} />
       <CallToAction />
       <section id="exterior" className="grid">
         <span className="title">

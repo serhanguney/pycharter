@@ -7,6 +7,9 @@
   display: flex;
   align-items: center;
   z-index: 999;
+  @media screen and (max-width: 620px) {
+    justify-content: center;
+  }
   ul {
     display: flex;
     margin: 0 100px;
@@ -71,10 +74,12 @@
     @media screen and (max-width: 800px) {
       margin-right: 50px;
     }
-    @media screen and (max-width: 620px) {
-      width: 30px;
-      height: 30px;
-    }
+  }
+  .fade-in {
+    opacity: 1;
+  }
+  .fade-out {
+    opacity: 0;
   }
 }
 .sticky {

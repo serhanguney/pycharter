@@ -1,12 +1,19 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
+import ReactDom from "react-dom";
 import useSlider from "../../hooks/useSlider";
 import gsap, { Power3 } from "gsap";
+import Modal from "../Modal";
 
 export default function Slider({ images }) {
   //create a state and fetch its reducers using custom hook
   const { slide, nextSlide, previousSlide } = useSlider();
   let gallery = useRef(null);
-  let slideButtons = useRef(null);
+
+  //can't use the reducer for modal because it triggers the useeffect unnecessarily
+  const [modal, setModal] = useState(false);
+
+  //for modal animation
+  let modalPosition = useRef(null);
 
   //create tween references to get isActive methods.
   let tweenToNext = useRef(null);
@@ -29,17 +36,26 @@ export default function Slider({ images }) {
     }
   }
 
+  function handleToggle() {
+    modalPosition.current = {
+      height: gallery.children[slide.no].getBoundingClientRect().height,
+      width: gallery.children[slide.no].getBoundingClientRect().width,
+      top: gallery.children[slide.no].getBoundingClientRect().top,
+      left: gallery.children[slide.no].getBoundingClientRect().left,
+    };
+    setModal(true);
+  }
   //handle sliding based on limits and direction. Use gallery ref to fetch children and grandchildren of parent.
   //children for sliding, grandchildren for scaling
   useEffect(() => {
     tweenToNext.current = gsap.to(gallery.children, {
-      x: `-=${100}%`,
+      x: `-=100%`,
       ease: Power3.easeInOut,
       duration: 1,
       paused: true,
     });
     tweenToPrevious.current = gsap.to(gallery.children, {
-      x: `+=${100}%`,
+      x: `+=100%`,
       ease: Power3.easeInOut,
       duration: 1,
       paused: true,
@@ -65,20 +81,21 @@ export default function Slider({ images }) {
         });
       }
     }
-    console.log(slide.no);
   }, [slide]);
   return (
-    <div className="slider grid">
-      <button name="previous" onClick={(e) => handleClick(e)}>{`<`}</button>
+    <div className="slider">
       <div ref={(el) => (gallery = el)} className="gallery">
         {images.map((image, index) => (
-          <div key={index} className="image-container">
+          <div key={index} className="image-container" onClick={handleToggle}>
             <img key={index} src={image} alt="boat" />
           </div>
         ))}
       </div>
-      <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
-      <div ref={(el) => (slideButtons = el)} className="slide-buttons">
+      <div className="button-container">
+        <button name="previous" onClick={(e) => handleClick(e)}>{`<`}</button>
+        <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
+      </div>
+      <div className="pagination">
         {images.map((el, i) => (
           <span
             key={i}
@@ -87,6 +104,18 @@ export default function Slider({ images }) {
           ></span>
         ))}
       </div>
+      {ReactDom.createPortal(
+        <Modal
+          open={modal}
+          close={() => setModal(false)}
+          position={modalPosition.current}
+        >
+          <div className="image-container">
+            <img src={images[slide.no]} alt="boat" />
+          </div>
+        </Modal>,
+        document.getElementById("portal")
+      )}
     </div>
   );
 }

@@ -1,0 +1,59 @@
+#features {
+  grid-column: 1/-1;
+  background-color: $lightest-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  h1 {
+    padding: 20px 0;
+  }
+  .features-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 30px 30px 50px 30px;
+    button {
+      width: 40px;
+      height: 40px;
+      border: 1px solid $main-color;
+      border-radius: 20px;
+      color: $main-color;
+      @media screen and (min-width: 620px) {
+        display: none;
+      }
+    }
+    .features-container {
+      position: relative;
+      width: 90%;
+      height: 100%;
+      overflow: hidden;
+      @media screen and (max-width: 1200px) {
+        display: flex;
+        margin: 0 auto;
+      }
+
+      ul {
+        grid-column: span 2;
+        @media screen and (max-width: 1200px) {
+          flex-shrink: 0;
+          width: 33.3%;
+        }
+        @media screen and (max-width: 620px) {
+          flex-shrink: 0;
+          width: 100%;
+          text-align: center;
+        }
+        li {
+          margin: 5px 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 620px) {
+    margin-top: 30px;
+  }
+}
