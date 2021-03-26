@@ -49,7 +49,9 @@ export default function Features({ features }) {
           {">"}
         </button>
       </div>
-      <Pagination slide={slide} array={myFeatures} />
+      {dimensions.width < 620 && (
+        <Pagination slide={slide} array={myFeatures} />
+      )}
     </section>
   );
 }

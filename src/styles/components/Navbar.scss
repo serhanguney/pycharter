@@ -1,6 +1,6 @@
 #navbar {
   position: absolute;
-  z-index: 999;
+  z-index: 9999;
   width: 100vw;
   height: 8vh;
   background-color: rgba(255, 255, 255, 0.75);
@@ -9,7 +9,24 @@
   h2 {
     font-size: 20px;
     margin-left: 50px;
+    @media screen and(max-width: 960px) {
+      margin-left: 20px;
+    }
   }
+  .menu-icon {
+    position: relative;
+    margin-left: auto;
+    margin-right: 40px;
+    width: 55px;
+    height: 55px;
+    svg {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
   .navigation {
     display: flex;
     align-items: center;
@@ -17,6 +34,9 @@
     margin-left: auto;
     margin-right: 100px;
     padding: 10px 0;
+    @media screen and(max-width: 960px) {
+      margin-right: 20px;
+    }
     a {
       margin: 0 30px;
     }

@@ -1,0 +1,38 @@
+#about {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  padding-top: 200px;
+  background-color: $lightest-color;
+  @media screen and(max-width: 620px) {
+    padding-top: 100px;
+  }
+  .text-content {
+    grid-column: 2/8;
+    @media screen and(max-width: 620px) {
+      grid-column: 1/-1;
+      padding: 0 40px;
+    }
+    h2 {
+      font-size: 96px;
+      @media screen and(max-width: 620px) {
+        font-size: 50px;
+      }
+    }
+    p {
+      margin: 20px 0;
+      font-size: 16px;
+      @media screen and(max-width: 620px) {
+        font-size: 14px;
+      }
+    }
+  }
+  .visual-content {
+    grid-column: 8/12;
+    @media screen and(max-width: 620px) {
+      display: none;
+    }
+  }
+}

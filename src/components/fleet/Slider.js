@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import useSlider from "../../hooks/useSlider";
 import Modal from "../Modal";
 import Pagination from "./Pagination";
-import { animate, motion } from "framer-motion";
+import { animate, AnimatePresence, motion } from "framer-motion";
 import { Portfolio } from "../../context";
 
 export default function Slider({ images }) {
@@ -44,13 +44,12 @@ export default function Slider({ images }) {
     }
   }
 
-  function handleToggle() {
-    setModal(true);
-  }
   //handle sliding based on limits and direction. Use gallery ref to fetch children and grandchildren of parent.
   //children for sliding, grandchildren for scaling
   useEffect(() => {
+    console.log("triggering resize based on width change");
     if (slideMotionValue.hasAnimated) {
+      console.log("triggering resize based on width change");
       const width = gallery.children[0].getBoundingClientRect().width;
       slideMotionValue.prev < 0
         ? animate(slideMotionValue, width * -slide.no, motionTransition)
@@ -60,7 +59,7 @@ export default function Slider({ images }) {
             motionTransition
           );
     }
-  }, [width, motionTransition]);
+  }, [width]);
   return (
     <div className="slider">
       <div ref={(el) => (gallery = el)} className="gallery">
@@ -69,7 +68,7 @@ export default function Slider({ images }) {
             style={{ x: slideMotionValue }}
             key={index}
             className="image-container"
-            onClick={handleToggle}
+            onClick={() => setModal(true)}
           >
             <motion.img
               custom={index}
@@ -88,14 +87,16 @@ export default function Slider({ images }) {
         <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
       </div>
       <Pagination slide={slide} array={images} />
-      {ReactDom.createPortal(
-        <Modal open={modal} close={() => setModal(false)}>
-          <div className="image-container">
-            <img src={images[slide.no]} alt="boat" />
-          </div>
-        </Modal>,
-        document.getElementById("portal")
-      )}
+
+      {modal &&
+        ReactDom.createPortal(
+          <Modal key={2} close={() => setModal(false)}>
+            <div className="image-container">
+              <img src={images[slide.no]} alt="boat" />
+            </div>
+          </Modal>,
+          document.getElementById("portal")
+        )}
     </div>
   );
 }

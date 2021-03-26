@@ -12,54 +12,57 @@
     justify-self: center;
     padding: 60px 0 40px 0;
   }
-  .boat-card {
-    grid-column: span 3;
+  .boat-card-container {
+    position: relative;
+    overflow-x: auto;
+    grid-column: 1/-1;
     display: flex;
-    flex-direction: column;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 0 20px $shadow-color;
-    @media screen and(max-width: 960px) {
-      grid-column: span 4;
-    }
-    @media screen and(max-width: 800px) {
-      grid-column: span 6;
-    }
-    @media screen and(max-width: 620px) {
-      grid-column: 1/-1;
-      grid-row: 2/3;
-      max-width: 260px;
-      justify-self: center;
-    }
-    .image-container {
-      width: 100%;
+    scroll-snap-type: x mandatory;
+
+    .boat-card {
+      max-width: 332px;
+      margin: 0 20px;
+      scroll-snap-align: start;
+      display: flex;
+      flex-direction: column;
+      height: 400px;
       overflow: hidden;
-      height: 40%;
-    }
-    h1 {
-      font-size: 24px;
-      padding: 10px 15px 0 15px;
-    }
-    h2 {
-      font-size: 24px;
-      padding: 0 15px 0 15px;
-    }
-    p {
-      padding: 10px 15px 0 15px;
-    }
-    a {
-      cursor: pointer;
-      color: $main-color;
-      margin: auto 15px 10px auto;
-      font-size: 14px;
-    }
-    @media screen and (max-width: 1200px) {
+      border-radius: 8px;
+      box-shadow: 0 0 20px $shadow-color;
+      @media screen and(max-width: 620px) {
+        flex-shrink: 0;
+        max-width: 260px;
+        margin: 0 20px;
+      }
+      .image-container {
+        width: 100%;
+        overflow: hidden;
+        height: 40%;
+      }
+      h1 {
+        font-size: 24px;
+        padding: 10px 15px 0 15px;
+      }
       h2 {
-        font-size: 16px;
+        font-size: 24px;
+        padding: 0 15px 0 15px;
       }
       p {
-        font-size: 12px;
+        padding: 10px 15px 0 15px;
+      }
+      a {
+        cursor: pointer;
+        color: $main-color;
+        margin: auto 15px 10px auto;
+        font-size: 14px;
+      }
+      @media screen and (max-width: 1200px) {
+        h2 {
+          font-size: 16px;
+        }
+        p {
+          font-size: 12px;
+        }
       }
     }
   }

@@ -38,6 +38,7 @@
       }
 
       ul {
+        grid-column: span 2;
         @media screen and (max-width: 1200px) {
           flex-shrink: 0;
           width: 33.3%;

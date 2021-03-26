@@ -1,47 +1,102 @@
-import React, { useRef } from "react";
-import Navbar from "../components/Navbar";
+import React from "react";
 import Reveal from "../components/Reveal";
 import { Link } from "react-router-dom";
-import Loading from "../components/Loading";
 import { useContext } from "react/cjs/react.development";
 import { Portfolio } from "../context";
 import { motion } from "framer-motion";
 export default function Homepage() {
-  const { portfolio } = useContext(Portfolio);
-  let descriptionPanel = useRef(null);
+  const {
+    portfolio: { motionProps },
+    motionMenu,
+  } = useContext(Portfolio);
+
+  const ease = [0.65, 0.05, 0.36, 1];
+  console.log(window.innerHeight, motionProps.gridCount);
+  const xOffset =
+    (window.innerWidth / motionProps.gridCount) * motionProps.column;
+
+  const pageLoaders = {
+    parent: {
+      initial: {
+        backgroundColor: "#EDFCFF",
+        x: xOffset * -1,
+        y: motionProps.y * -1,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+      animate: {
+        backgroundColor: "#ffffffbb",
+        x: 0,
+        y: 0,
+        width: (window.innerWidth / motionProps.gridCount) * motionProps.span,
+        height: 400,
+        transition: {
+          duration: motionProps.duration,
+          delay: motionProps.delay,
+          ease: ease,
+        },
+      },
+      exit: {
+        backgroundColor: "#EDFCFF",
+        x: xOffset * -1,
+        y: motionProps.y * -1,
+        width: window.innerWidth,
+        height: window.innerHeight,
+        transition: {
+          duration: motionProps.duration,
+          ease: ease,
+          delay: 0.3,
+        },
+      },
+    },
+    child: {
+      initial: {
+        marginLeft: xOffset,
+        marginTop: motionProps.y,
+      },
+      animate: {
+        marginLeft: 0,
+        marginTop: 0,
+        transition: {
+          duration: motionProps.duration,
+          delay: motionProps.delay,
+          ease: ease,
+        },
+      },
+    },
+  };
 
   return (
-    <main id="homepage">
-      {portfolio.loading && <Loading ref={descriptionPanel} />}
-
-      <Navbar />
+    <motion.main id="homepage" style={{ y: motionMenu }}>
       <section className="landing-page grid">
         <motion.div
-          ref={(el) => (descriptionPanel = el)}
           className="description"
-          initial={{ backgroundColor: "rgba(255,255,255,0)" }}
-          animate={{ backgroundColor: "rgba(255,255,255,0.75)" }}
-          transition={{ delay: 5.5, duration: 0.5 }}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          variants={pageLoaders.parent}
         >
-          <div className="text-content">
-            <Reveal delay={3}>
+          <motion.div className="text-content" variants={pageLoaders.child}>
+            <Reveal>
               <h2>Ahoy!</h2>
             </Reveal>
-            <Reveal delay={3.2}>
+            <Reveal delay={0.2}>
               <p>
                 A unique blue cruise experience on the magnificent bays and
                 Greek islands of the Aegean and Mediterranean Sea
               </p>
             </Reveal>
-          </div>
-          <Reveal delay={3.5}>
-            <button className="secondary-button">Request callback</button>
-            <button className="primary-button">
-              <Link to="/fleet/eldoris">Go to fleet</Link>
-            </button>
+          </motion.div>
+          <Reveal delay={2.5}>
+            <div className="button-container">
+              <button className="secondary-button">Request callback</button>
+              <button className="primary-button">
+                <Link to="/fleet/eldoris">Go to fleet</Link>
+              </button>
+            </div>
           </Reveal>
         </motion.div>
       </section>
-    </main>
+    </motion.main>
   );
 }

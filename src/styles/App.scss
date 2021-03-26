@@ -1,6 +1,9 @@
 @import "./variables.scss";
 @import "./pages/Homepage.scss";
+@import "./pages/About.scss";
 @import "./pages/Fleet.scss";
+@import "./pages/Yacht.scss";
+@import "./pages/Contact.scss";
 @import "./components/Navbar.scss";
 @import "./components/fleet/SubPanel.scss";
 @import "./components/fleet/Slider.scss";
@@ -10,11 +13,16 @@
 @import "./components/Modal.scss";
 @import "./components/fleet/Features.scss";
 @import "./components/fleet/Pagination.scss";
+@import "./components/Loading.scss";
+@import "./components/Reveal.scss";
+@import "./components/Menu.scss";
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Playfair+Display:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
 }
 html {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow-x: hidden;
   font-family: "Comfortaa", cursive;
 }
@@ -23,6 +31,17 @@ body {
   margin: 0;
   line-height: 1.5;
   overflow-x: hidden;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 a {
   text-decoration: none;
@@ -43,47 +62,22 @@ li {
 }
 li {
   list-style-type: none;
+  color: $text-color;
 }
 button {
   background: none;
   border: none;
   outline: none;
   cursor: pointer;
-}
-//GLOBAL CLASSES
-.grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  @media screen and (max-width: 620px) {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-.primary-button {
-  height: 45px;
-  box-shadow: 0 0 12px #0091b13f;
-  border-radius: 48px;
-  background: linear-gradient(90deg, $main-color, $light-color);
-  color: white;
-  a {
-    color: white;
-  }
-  @media screen and (max-width: 800px) {
-    font-size: 12px;
-    height: 30px;
-  }
-}
-.secondary-button {
-  height: 45px;
-  box-shadow: 0 0 12px #0091b13f;
-  border-radius: 48px;
-  background-color: $lightest-color;
-  color: $main-color;
-  @media screen and (max-width: 800px) {
-    font-size: 12px;
-    height: 30px;
-  }
+  width: 184px;
+  height: 40px;
+  margin: 10px;
 }
 //FONTS
+textarea,
+input {
+  font-family: "Comfortaa", cursive;
+}
 h1 {
   font-size: 36px;
   font-weight: 700;
@@ -112,19 +106,62 @@ a {
     font-size: 12px;
   }
 }
-
 //GLOBAL CLASSES
+#homepage,
+#fleet {
+  position: relative;
+  z-index: 9;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+.primary-button {
+  box-shadow: 0 0 12px #0091b13f;
+  border-radius: 48px;
+  background: linear-gradient(90deg, $main-color, $light-color);
+  color: white;
+  a {
+    color: white;
+  }
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
+}
+.secondary-button {
+  box-shadow: 0 0 12px #0091b13f;
+  border-radius: 48px;
+  background-color: $lightest-color;
+  color: $main-color;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
+}
+.tertiary-button {
+  border: 1px solid $main-color;
+  background-color: white;
+  color: $main-color;
+  border-radius: 48px;
+  @media screen and (max-width: 800px) {
+    font-size: 12px;
+  }
+}
 .description {
+  position: relative;
   grid-column: 2/7;
-  height: 45%;
+  min-height: 45%;
   margin: 200px 0 0 0;
-  background-color: rgba(255, 255, 255, 0.75);
   padding: 20px;
+  z-index: 9990;
+  min-width: 500px;
   .text-content {
+    z-index: 1;
+    max-width: 564px;
     * {
       margin: 10px 0;
     }
     @media screen and (max-width: 620px) {
+      text-align: center;
       h1,
       h2 {
         margin: 0;
@@ -139,40 +176,31 @@ a {
       }
     }
   }
-  button {
-    width: 33%;
-    margin: 20px;
+  .button-container {
+    display: flex;
+    align-items: center;
     @media screen and (max-width: 620px) {
-      width: 45%;
-      margin: 20px 5px;
+      flex-direction: column;
+      // padding-top: 10px;
     }
   }
-  @media screen and (max-width: 1200px) {
-    grid-column: 2/8;
-  }
-  @media screen and (max-width: 800px) {
-    grid-column: 2/9;
-  }
   @media screen and (max-width: 620px) {
-    grid-column: 1/-1;
-    margin: 150px 20px 20px 20px;
-    height: 50%;
+    grid-column: 2 / 12;
+    min-width: 320px;
+    margin: 150px 0 0 0;
   }
 }
-.loading-page {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: white;
-  z-index: 9999;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  h2 {
-    background-image: linear-gradient(to right, #ffffff, #ffffff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+.active {
+  pointer-events: auto;
+  z-index: 1;
+}
+.inactive {
+  pointer-events: none;
+  z-index: -1;
+}
+.invisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
 }

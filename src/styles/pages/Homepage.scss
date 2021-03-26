@@ -1,6 +1,6 @@
 #homepage {
-  background-image: url("../../images/homepage.png");
-  background-position: center;
+  background-image: url("../../images/eldorisTheme.jpg");
+  background-position: 50% 10%;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
@@ -8,24 +8,21 @@
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     width: 100%;
+
     .description {
       position: relative;
       z-index: 9999;
       h2 {
         font-size: 96px;
         @media screen and(max-width: 620px) {
-          font-size: 84px;
+          font-size: 50px;
         }
       }
       p {
         font-size: 16px;
         @media screen and(max-width: 620px) {
-          font-size: 12px;
+          font-size: 14px;
         }
-      }
-      button {
-        width: 39%;
-        margin: 20px 5px;
       }
     }
   }
