@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import Reveal from "../components/Reveal";
 import { Link } from "react-router-dom";
-import { useContext } from "react/cjs/react.development";
 import { Portfolio } from "../context";
 import { motion } from "framer-motion";
 import content from "../content/content";
