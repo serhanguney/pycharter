@@ -68,20 +68,13 @@ export default function Homepage() {
       },
     },
   };
-  function handleLanguage() {
-    setPortfolio({ ...portfolio, language: "tur" });
-  }
+  // function handleLanguage() {
+  //   setPortfolio({ ...portfolio, language: "tur" });
+  // }
 
   return (
     <motion.main id="homepage" style={{ y: motionMenu }}>
       <section className="landing-page grid">
-        <button
-          style={{ marginTop: 100 }}
-          className="secondary-button"
-          onClick={handleLanguage}
-        >
-          Toggle Language
-        </button>
         <motion.div
           className="description"
           initial="initial"
@@ -91,11 +84,12 @@ export default function Homepage() {
         >
           <motion.div className="text-content" variants={pageLoaders.child}>
             <Reveal>
-              <h2>{content[portfolio.language].homepage.description.title}</h2>
+              <h2>Ahoy!</h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p>
-                {content[portfolio.language].homepage.description.paragraph}
+                A unique blue cruise experience on the magnificent bays and
+                Greek islands of the Aegean and Mediterranean Sea
               </p>
             </Reveal>
           </motion.div>
