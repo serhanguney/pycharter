@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/pycharter/static/css/main.8510da30.chunk.css",
+    "main.js": "/pycharter/static/js/main.5a68649c.chunk.js",
+    "main.js.map": "/pycharter/static/js/main.5a68649c.chunk.js.map",
+    "runtime-main.js": "/pycharter/static/js/runtime-main.29819a89.js",
+    "runtime-main.js.map": "/pycharter/static/js/runtime-main.29819a89.js.map",
+    "static/js/2.a10515ee.chunk.js": "/pycharter/static/js/2.a10515ee.chunk.js",
+    "static/js/2.a10515ee.chunk.js.map": "/pycharter/static/js/2.a10515ee.chunk.js.map",
+    "index.html": "/pycharter/index.html",
+    "static/css/main.8510da30.chunk.css.map": "/pycharter/static/css/main.8510da30.chunk.css.map",
+    "static/js/2.a10515ee.chunk.js.LICENSE.txt": "/pycharter/static/js/2.a10515ee.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/pycharter/static/media/eldorisTheme.55031a21.jpg",
+    "static/media/eldorisBath-1.5ddda9a0.jpg": "/pycharter/static/media/eldorisBath-1.5ddda9a0.jpg",
+    "static/media/eldorisBath-2.c58c3347.jpg": "/pycharter/static/media/eldorisBath-2.c58c3347.jpg",
+    "static/media/eldorisBath-3.35abf4f2.jpg": "/pycharter/static/media/eldorisBath-3.35abf4f2.jpg",
+    "static/media/eldorisBed-1.a74423e3.jpg": "/pycharter/static/media/eldorisBed-1.a74423e3.jpg",
+    "static/media/eldorisBed-2.a47ddb87.jpg": "/pycharter/static/media/eldorisBed-2.a47ddb87.jpg",
+    "static/media/eldorisExt-1.188ffe66.jpg": "/pycharter/static/media/eldorisExt-1.188ffe66.jpg",
+    "static/media/eldorisExt-10.4eb174ad.jpg": "/pycharter/static/media/eldorisExt-10.4eb174ad.jpg",
+    "static/media/eldorisExt-11.0411ee4b.jpg": "/pycharter/static/media/eldorisExt-11.0411ee4b.jpg",
+    "static/media/eldorisExt-2.45042cf4.jpg": "/pycharter/static/media/eldorisExt-2.45042cf4.jpg",
+    "static/media/eldorisExt-3.45042cf4.jpg": "/pycharter/static/media/eldorisExt-3.45042cf4.jpg",
+    "static/media/eldorisExt-4.a55ae030.jpg": "/pycharter/static/media/eldorisExt-4.a55ae030.jpg",
+    "static/media/eldorisExt-5.f228ce5b.jpg": "/pycharter/static/media/eldorisExt-5.f228ce5b.jpg",
+    "static/media/eldorisExt-6.b6abeb28.jpg": "/pycharter/static/media/eldorisExt-6.b6abeb28.jpg",
+    "static/media/eldorisExt-7.840ab530.jpg": "/pycharter/static/media/eldorisExt-7.840ab530.jpg",
+    "static/media/eldorisExt-8.c89dd6b3.jpg": "/pycharter/static/media/eldorisExt-8.c89dd6b3.jpg",
+    "static/media/eldorisExt-9.89a888de.jpg": "/pycharter/static/media/eldorisExt-9.89a888de.jpg",
+    "static/media/eldorisKitchen-1.846ab574.jpg": "/pycharter/static/media/eldorisKitchen-1.846ab574.jpg",
+    "static/media/eldorisKitchen-2.cf17b846.jpg": "/pycharter/static/media/eldorisKitchen-2.cf17b846.jpg",
+    "static/media/homepage.74340685.png": "/pycharter/static/media/homepage.74340685.png",
+    "static/media/required.b1971327.svg": "/pycharter/static/media/required.b1971327.svg",
+    "static/media/rightArrow.13e461c6.svg": "/pycharter/static/media/rightArrow.13e461c6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.29819a89.js",
+    "static/js/2.a10515ee.chunk.js",
+    "static/css/main.8510da30.chunk.css",
+    "static/js/main.5a68649c.chunk.js"
+  ]
+}
