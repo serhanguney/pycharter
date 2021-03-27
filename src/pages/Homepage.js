@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { useContext } from "react/cjs/react.development";
 import { Portfolio } from "../context";
 import { motion } from "framer-motion";
+import content from "../content/content";
 export default function Homepage() {
   const {
     portfolio: { motionProps },
     motionMenu,
+    setPortfolio,
+    portfolio,
   } = useContext(Portfolio);
 
   const ease = [0.65, 0.05, 0.36, 1];
@@ -65,10 +68,20 @@ export default function Homepage() {
       },
     },
   };
+  function handleLanguage() {
+    setPortfolio({ ...portfolio, language: "tur" });
+  }
 
   return (
     <motion.main id="homepage" style={{ y: motionMenu }}>
       <section className="landing-page grid">
+        <button
+          style={{ marginTop: 100 }}
+          className="secondary-button"
+          onClick={handleLanguage}
+        >
+          Toggle Language
+        </button>
         <motion.div
           className="description"
           initial="initial"
@@ -78,12 +91,11 @@ export default function Homepage() {
         >
           <motion.div className="text-content" variants={pageLoaders.child}>
             <Reveal>
-              <h2>Ahoy!</h2>
+              <h2>{content[portfolio.language].homepage.description.title}</h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p>
-                A unique blue cruise experience on the magnificent bays and
-                Greek islands of the Aegean and Mediterranean Sea
+                {content[portfolio.language].homepage.description.paragraph}
               </p>
             </Reveal>
           </motion.div>

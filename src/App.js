@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Menu from "./components/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Destinations from "./pages/Destinations";
 import { Route, Switch } from "react-router-dom";
 import { Portfolio, portfolioObject } from "./context";
 import { AnimatePresence, useMotionValue } from "framer-motion";
@@ -78,6 +79,7 @@ function App() {
                 <Route path="/fleet" component={Fleet} exact />
                 <Route path="/fleet/:boat" component={Yacht} />
                 <Route path="/about" component={About} />
+                <Route path="/destinations" component={Destinations} />
                 <Route path="/contact" component={Contact} />
               </Switch>
             </AnimatePresence>

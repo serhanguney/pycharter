@@ -30,7 +30,7 @@ export default function useForm(validate) {
     const submit = async () => {
       try {
         const result = await axios.post(
-          "http://localhost:3001/contact",
+          "https://pacific-stream-49427.herokuapp.com/contact",
           values
         );
         console.log(result);

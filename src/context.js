@@ -10,6 +10,7 @@ if (window.innerWidth < 620) {
 }
 
 export const portfolioObject = {
+  language: "en",
   loading: true,
   menuOpen: false,
   motionProps: {

@@ -158,7 +158,7 @@ export default function Navbar() {
           <div className="navigation">
             <Link to="/">Home</Link>
             <Link to="/fleet">Fleet</Link>
-            <Link to="/fleet/eldoris">Eldoris</Link>
+            <Link to="/destinations">Destinations</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
           </div>
