@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/pycharter/static/css/main.d4f56456.chunk.css",
-    "main.js": "/pycharter/static/js/main.61d72382.chunk.js",
-    "main.js.map": "/pycharter/static/js/main.61d72382.chunk.js.map",
+    "main.css": "/pycharter/static/css/main.e87c6487.chunk.css",
+    "main.js": "/pycharter/static/js/main.e4c34587.chunk.js",
+    "main.js.map": "/pycharter/static/js/main.e4c34587.chunk.js.map",
     "runtime-main.js": "/pycharter/static/js/runtime-main.29819a89.js",
     "runtime-main.js.map": "/pycharter/static/js/runtime-main.29819a89.js.map",
-    "static/js/2.34ad5545.chunk.js": "/pycharter/static/js/2.34ad5545.chunk.js",
-    "static/js/2.34ad5545.chunk.js.map": "/pycharter/static/js/2.34ad5545.chunk.js.map",
+    "static/js/2.aeaa8666.chunk.js": "/pycharter/static/js/2.aeaa8666.chunk.js",
+    "static/js/2.aeaa8666.chunk.js.map": "/pycharter/static/js/2.aeaa8666.chunk.js.map",
     "index.html": "/pycharter/index.html",
-    "static/css/main.d4f56456.chunk.css.map": "/pycharter/static/css/main.d4f56456.chunk.css.map",
-    "static/js/2.34ad5545.chunk.js.LICENSE.txt": "/pycharter/static/js/2.34ad5545.chunk.js.LICENSE.txt",
+    "static/css/main.e87c6487.chunk.css.map": "/pycharter/static/css/main.e87c6487.chunk.css.map",
+    "static/js/2.aeaa8666.chunk.js.LICENSE.txt": "/pycharter/static/js/2.aeaa8666.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/pycharter/static/media/submitted.5a686a4a.png",
     "static/media/camaronBed-1.5d2f6205.jpg": "/pycharter/static/media/camaronBed-1.5d2f6205.jpg",
     "static/media/camaronBed-2.ae23cdf5.jpg": "/pycharter/static/media/camaronBed-2.ae23cdf5.jpg",
     "static/media/camaronBed-3.b5719f26.jpg": "/pycharter/static/media/camaronBed-3.b5719f26.jpg",
@@ -61,7 +62,6 @@
     "static/media/eldorisLanding.7a6ada52.jpg": "/pycharter/static/media/eldorisLanding.7a6ada52.jpg",
     "static/media/eldorisMobileLanding.4b1f17d9.jpeg": "/pycharter/static/media/eldorisMobileLanding.4b1f17d9.jpeg",
     "static/media/eldorisPlan.862ce9cc.jpg": "/pycharter/static/media/eldorisPlan.862ce9cc.jpg",
-    "static/media/App.scss": "/pycharter/static/media/submitted.5a686a4a.png",
     "static/media/exterior1.6ffc44aa.jpg": "/pycharter/static/media/exterior1.6ffc44aa.jpg",
     "static/media/exterior1.ef8986bc.jpg": "/pycharter/static/media/exterior1.ef8986bc.jpg",
     "static/media/exterior10.89f30b08.jpg": "/pycharter/static/media/exterior10.89f30b08.jpg",
@@ -75,7 +75,6 @@
     "static/media/exterior7.b2b09cbd.jpg": "/pycharter/static/media/exterior7.b2b09cbd.jpg",
     "static/media/exterior8.0c171fb8.jpg": "/pycharter/static/media/exterior8.0c171fb8.jpg",
     "static/media/exterior9.7862d275.jpg": "/pycharter/static/media/exterior9.7862d275.jpg",
-    "static/media/homepage.74340685.png": "/pycharter/static/media/homepage.74340685.png",
     "static/media/interior1.c214ebdf.jpg": "/pycharter/static/media/interior1.c214ebdf.jpg",
     "static/media/interior1.d21f7e06.jpg": "/pycharter/static/media/interior1.d21f7e06.jpg",
     "static/media/interior10.576089ee.jpg": "/pycharter/static/media/interior10.576089ee.jpg",
@@ -110,14 +109,15 @@
     "static/media/interior9.9cff780e.jpg": "/pycharter/static/media/interior9.9cff780e.jpg",
     "static/media/interior9.aa4dd9ec.jpg": "/pycharter/static/media/interior9.aa4dd9ec.jpg",
     "static/media/megalodonCover.6ffc44aa.jpg": "/pycharter/static/media/megalodonCover.6ffc44aa.jpg",
+    "static/media/mobileYachtLanding.745a1f8b.jpg": "/pycharter/static/media/mobileYachtLanding.745a1f8b.jpg",
     "static/media/required.b1971327.svg": "/pycharter/static/media/required.b1971327.svg",
     "static/media/rightArrow.e10a7c60.svg": "/pycharter/static/media/rightArrow.e10a7c60.svg",
     "static/media/snoopyCover.96e35a37.jpeg": "/pycharter/static/media/snoopyCover.96e35a37.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.29819a89.js",
-    "static/js/2.34ad5545.chunk.js",
-    "static/css/main.d4f56456.chunk.css",
-    "static/js/main.61d72382.chunk.js"
+    "static/js/2.aeaa8666.chunk.js",
+    "static/css/main.e87c6487.chunk.css",
+    "static/js/main.e4c34587.chunk.js"
   ]
 }
