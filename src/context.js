@@ -13,13 +13,5 @@ export const portfolioObject = {
   language: "en",
   loading: true,
   menuOpen: false,
-  motionProps: {
-    gridCount: 12,
-    column: 1,
-    span: span,
-    y: y,
-    height: 400,
-    duration: 1.5,
-    delay: 1.2,
-  },
+  ease: [0.65, 0.05, 0.36, 1],
 };

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import ReactDom from "react-dom";
 import SubPanel from "../components/fleet/SubPanel";
 import Slider from "../components/fleet/Slider";
 import { fleet } from "../boats/boats";
@@ -8,19 +9,15 @@ import CallToAction from "../components/fleet/CallToAction";
 import OtherBoats from "../components/fleet/OtherBoats";
 import Features from "../components/fleet/Features";
 import { Portfolio } from "../context";
-
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
+import { useEffect } from "react/cjs/react.development";
 
 export default function Yacht() {
-  window.scrollTo({
-    top: 0,
-  });
-  const {
-    portfolio: { motionProps },
-    motionMenu,
-  } = useContext(Portfolio);
-  console.log(motionProps);
+  const { portfolio, motionMenu, loadPage, pageTransition } = useContext(
+    Portfolio
+  );
   const { boat } = useParams();
   const activeBoat = fleet.find((item) => item.name.toLowerCase() === boat);
   const {
@@ -32,76 +29,35 @@ export default function Yacht() {
     features,
     coverImage,
     images,
+    landingImage,
   } = activeBoat;
-  const ease = [0.65, 0.05, 0.36, 1];
-  const xOffset =
-    (window.innerWidth / motionProps.gridCount) * motionProps.column;
-  const finalDelay = motionProps.delay + motionProps.duration;
-  const pageLoaders = {
-    parent: {
-      initial: {
-        backgroundColor: "#EDFCFF",
-        x: xOffset * -1,
-        y: motionProps.y * -1,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      },
-      animate: {
-        backgroundColor: "#ffffffbb",
-        x: 0,
-        y: 0,
-        width: (window.innerWidth / motionProps.gridCount) * motionProps.span,
-        height: 400,
-        transition: {
-          duration: motionProps.duration,
-          delay: motionProps.delay,
-          ease: ease,
-        },
-      },
-    },
-    child: {
-      initial: {
-        marginLeft: xOffset,
-        marginTop: motionProps.y,
-      },
-      animate: {
-        marginLeft: 0,
-        marginTop: 0,
-        transition: {
-          duration: motionProps.duration,
-          delay: motionProps.delay,
-          ease: ease,
-        },
-      },
-    },
-    stagger: {
-      initial: { opacity: 1 },
-      animate: {
-        opacity: 1,
-        transition: {
-          when: "beforeChildren",
-          delay: finalDelay,
-          staggerChildren: 0.1,
-        },
-      },
-    },
-    revealChildren: {
-      initial: { scaleY: 0 },
-      animate: { scaleY: 1 },
-      exit: { scaleY: 0 },
-    },
-  };
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+    pageTransition();
+  }, []);
 
   return (
     <motion.main id="yacht" style={{ y: motionMenu }}>
-      <section id="landing-page" className="grid">
+      {ReactDom.createPortal(
         <motion.div
-          className="description"
-          initial="initial"
-          animate="animate"
-          variants={pageLoaders.parent}
-        >
-          <motion.div className="text-content" variants={pageLoaders.child}>
+          className="page__background"
+          initial={{ width: "100%" }}
+          animate={loadPage}
+          exit={{
+            width: "100%",
+            left: [-100, 0],
+            skewX: [0, -3, 0],
+            transition: { duration: 1.2, ease: portfolio.ease },
+          }}
+        ></motion.div>,
+        document.getElementById("portal")
+      )}
+      <section id="landing-page" className="grid">
+        <img src={landingImage} alt="landing image" />
+        <div className="description">
+          <div className="text-content">
             <Reveal delay={0.2}>
               <h1>{title}</h1>
             </Reveal>
@@ -112,25 +68,27 @@ export default function Yacht() {
               <p>{paragraph}</p>
             </Reveal>
 
-            <motion.ul variants={pageLoaders.stagger}>
-              <motion.li variants={pageLoaders.revealChildren}>
-                {specs.length}
-              </motion.li>
-              <motion.li variants={pageLoaders.revealChildren}>
-                {specs.capacity}
-              </motion.li>
-              <motion.li variants={pageLoaders.revealChildren}>
-                {specs.motor}
-              </motion.li>
-            </motion.ul>
-          </motion.div>
-          <Reveal delay={finalDelay}>
+            <ul>
+              <Reveal delay={0.4}>
+                <li>{specs.length}</li>
+              </Reveal>
+              <Reveal delay={0.5}>
+                <li>{specs.capacity}</li>
+              </Reveal>
+              <Reveal delay={0.6}>
+                <li>{specs.motor}</li>
+              </Reveal>
+            </ul>
+          </div>
+          <Reveal delay={0.4}>
             <div className="button-container">
-              <button className="secondary-button">Request callback</button>
+              <button className="secondary-button">
+                <Link to="/contact">Request callback</Link>
+              </button>
               <button className="primary-button">View Gallery</button>
             </div>
           </Reveal>
-        </motion.div>
+        </div>
         <SubPanel />
       </section>
       <section id="description" className="grid">

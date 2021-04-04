@@ -1,16 +1,21 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
+import ReactDom from "react-dom";
 import { fleet } from "../boats/boats";
 import rightArrow from "../icons/rightArrow.svg";
 import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import { Portfolio } from "../context";
+import { useEffect } from "react/cjs/react.development";
 
 export default function Fleet() {
-  const { motionMenu } = useContext(Portfolio);
+  const {
+    motionMenu,
+    loadPage,
+    pageTransition,
+    portfolio: { ease },
+  } = useContext(Portfolio);
   const history = useHistory();
-  const [load, setLoad] = useState(false);
-  const ease = [0.65, 0.05, 0.36, 1];
 
   const hoverVariants = {
     parent: {
@@ -21,7 +26,7 @@ export default function Fleet() {
     },
     overlay: {
       initial: {
-        y: "100%",
+        y: "80%",
         transition: { duration: 0.8, ease: ease },
       },
       animate: { y: "80%", transition: { duration: 0.6, ease: ease } },
@@ -63,19 +68,34 @@ export default function Fleet() {
     history.push(`/fleet/${link}`);
   }
 
+  useEffect(() => pageTransition(), []);
   return (
     <motion.main id="fleet" className="grid" style={{ y: motionMenu }}>
+      {ReactDom.createPortal(
+        <motion.div
+          className="page__background"
+          initial={{ width: "100%" }}
+          animate={loadPage}
+          exit={{
+            width: "100%",
+            left: [-100, 0],
+            skewX: [0, -3, 0],
+            transition: { duration: 1.2, ease: ease },
+          }}
+        ></motion.div>,
+        document.getElementById("portal")
+      )}
       <section className="text-content">
-        <Reveal delay={0.5}>
+        <Reveal delay={0.3}>
           <h2>Fleet</h2>
         </Reveal>
-        <Reveal delay={0.5}>
+        <Reveal delay={0.3}>
           <p>
             A unique blue cruise experience on the magnificent bays and Greek
             islands of the Aegean and Mediterranean Sea
           </p>
         </Reveal>
-        <Reveal delay={0.5}>
+        <Reveal delay={0.3}>
           <p>
             A unique blue cruise experience on the magnificent bays and Greek
             islands of the Aegean and Mediterranean Sea a unique blue cruise
@@ -87,15 +107,16 @@ export default function Fleet() {
       <section className="visual-content">
         {fleet.map((item, index) => (
           <div key={index} className="yacht-card">
-            <img src={item.coverImage} />
-            <Reveal direction={-1} delay={1.5} complete={setLoad}>
-              <div className="overlay"></div>
-            </Reveal>
+            <img
+              className="card-image"
+              src={item.coverImage}
+              alt="cover image"
+            />
             <motion.div
               className="yacht-features"
               name={item.name}
               initial="initial"
-              animate={load ? "animate" : "initial"}
+              animate="animate"
               exit="exit"
               whileHover="hover"
               onTap={(e) => handleTap(e)}

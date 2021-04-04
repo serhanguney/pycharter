@@ -4,6 +4,7 @@
 @import "./pages/Fleet.scss";
 @import "./pages/Yacht.scss";
 @import "./pages/Contact.scss";
+@import "./pages/Destinations.scss";
 @import "./components/Navbar.scss";
 @import "./components/fleet/SubPanel.scss";
 @import "./components/fleet/Slider.scss";
@@ -75,9 +76,11 @@ button {
 }
 //FONTS
 textarea,
-input {
+input,
+button {
   font-family: "Comfortaa", cursive;
 }
+
 h1 {
   font-size: 36px;
   font-weight: 700;
@@ -107,6 +110,20 @@ a {
   }
 }
 //GLOBAL CLASSES
+.page__background {
+  position: fixed;
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  background-color: $main-color;
+  overflow: hidden;
+}
 #homepage,
 #fleet {
   position: relative;
@@ -133,6 +150,9 @@ a {
   border-radius: 48px;
   background-color: $lightest-color;
   color: $main-color;
+  a {
+    color: $main-color;
+  }
   @media screen and (max-width: 800px) {
     font-size: 12px;
   }
@@ -148,12 +168,13 @@ a {
 }
 .description {
   position: relative;
-  grid-column: 2/7;
+  grid-column: 2/6;
   min-height: 45%;
+  height: 400px;
   margin: 200px 0 0 0;
   padding: 20px;
-  z-index: 9990;
   min-width: 500px;
+  background-color: $transparent-color;
   .text-content {
     z-index: 1;
     max-width: 564px;
@@ -179,6 +200,7 @@ a {
   .button-container {
     display: flex;
     align-items: center;
+    margin-top: 50px;
     @media screen and (max-width: 620px) {
       flex-direction: column;
       // padding-top: 10px;

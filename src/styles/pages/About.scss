@@ -5,7 +5,7 @@
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   padding-top: 200px;
-  background-color: $lightest-color;
+  background-image: linear-gradient(to right, #edfcff, #edfcff37);
   @media screen and(max-width: 620px) {
     padding-top: 100px;
   }

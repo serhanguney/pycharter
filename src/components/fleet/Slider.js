@@ -61,7 +61,8 @@ export default function Slider({ images }) {
     }
   }, [width]);
   return (
-    <div className="slider">
+    <div className="slider grid">
+      <button name="previous" onClick={(e) => handleClick(e)}>{`<`}</button>
       <div ref={(el) => (gallery = el)} className="gallery">
         {images.map((image, index) => (
           <motion.div
@@ -75,20 +76,17 @@ export default function Slider({ images }) {
               key={index}
               src={image}
               alt="boat"
-              initial="intial"
+              initial="initial"
               animate="animate"
               variants={imageVariants}
             />
           </motion.div>
         ))}
       </div>
-      <div className="button-container">
-        <button name="previous" onClick={(e) => handleClick(e)}>{`<`}</button>
-        <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
-      </div>
+      <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
       <Pagination slide={slide} array={images} />
 
-      {modal &&
+      {/* {modal &&
         ReactDom.createPortal(
           <Modal key={2} close={() => setModal(false)}>
             <div className="image-container">
@@ -96,7 +94,7 @@ export default function Slider({ images }) {
             </div>
           </Modal>,
           document.getElementById("portal")
-        )}
+        )} */}
     </div>
   );
 }

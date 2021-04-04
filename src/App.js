@@ -9,7 +9,7 @@ import Contact from "./pages/Contact";
 import Destinations from "./pages/Destinations";
 import { Route, Switch } from "react-router-dom";
 import { Portfolio, portfolioObject } from "./context";
-import { AnimatePresence, useMotionValue } from "framer-motion";
+import { AnimatePresence, useMotionValue, useAnimation } from "framer-motion";
 import Fleet from "./pages/Fleet";
 
 function App() {
@@ -20,7 +20,22 @@ function App() {
     height: window.innerHeight,
   });
 
+  const loadPage = useAnimation();
+  async function pageTransition() {
+    await loadPage.start({
+      x: window.innerWidth,
+      skewX: [0, -5, 0],
+      transition: { duration: 1.2, ease: portfolioObject.ease, delay: 0.2 },
+    });
+    await loadPage.start({
+      width: "0%",
+      x: 0,
+      transition: { duration: 0.1, x: { delay: 0.2 } },
+    });
+  }
+
   const motionMenu = useMotionValue(0);
+
   function debounce(fn, ms) {
     let timer;
     return () => {
@@ -62,7 +77,14 @@ function App() {
   return (
     <div>
       <Portfolio.Provider
-        value={{ portfolio, setPortfolio, dimensions, motionMenu }}
+        value={{
+          portfolio,
+          setPortfolio,
+          dimensions,
+          motionMenu,
+          pageTransition,
+          loadPage,
+        }}
       >
         <Navbar />
         {dimensions.width < 620 ? (

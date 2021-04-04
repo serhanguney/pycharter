@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
+import ReactDom from "react-dom";
 import Reveal from "../components/Reveal";
 import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
@@ -6,82 +7,38 @@ import { motion } from "framer-motion";
 import content from "../content/content";
 export default function Homepage() {
   const {
-    portfolio: { motionProps },
+    loadPage,
+    pageTransition,
     motionMenu,
     setPortfolio,
     portfolio,
   } = useContext(Portfolio);
 
-  const ease = [0.65, 0.05, 0.36, 1];
-  console.log(window.innerHeight, motionProps.gridCount);
-  const xOffset =
-    (window.innerWidth / motionProps.gridCount) * motionProps.column;
-
-  const pageLoaders = {
-    parent: {
-      initial: {
-        backgroundColor: "#EDFCFF",
-        x: xOffset * -1,
-        y: motionProps.y * -1,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      },
-      animate: {
-        backgroundColor: "#ffffffbb",
-        x: 0,
-        y: 0,
-        width: (window.innerWidth / motionProps.gridCount) * motionProps.span,
-        height: 400,
-        transition: {
-          duration: motionProps.duration,
-          delay: motionProps.delay,
-          ease: ease,
-        },
-      },
-      exit: {
-        backgroundColor: "#EDFCFF",
-        x: xOffset * -1,
-        y: motionProps.y * -1,
-        width: window.innerWidth,
-        height: window.innerHeight,
-        transition: {
-          duration: motionProps.duration,
-          ease: ease,
-          delay: 0.3,
-        },
-      },
-    },
-    child: {
-      initial: {
-        marginLeft: xOffset,
-        marginTop: motionProps.y,
-      },
-      animate: {
-        marginLeft: 0,
-        marginTop: 0,
-        transition: {
-          duration: motionProps.duration,
-          delay: motionProps.delay,
-          ease: ease,
-        },
-      },
-    },
-  };
+  useEffect(() => pageTransition(), []);
   // function handleLanguage() {
   //   setPortfolio({ ...portfolio, language: "tur" });
   // }
 
   return (
     <motion.main id="homepage" style={{ y: motionMenu }}>
-      <section className="landing-page grid">
+      {ReactDom.createPortal(
         <motion.div
-          className="description"
-          initial="initial"
-          animate="animate"
-          exit="exit"
-          variants={pageLoaders.parent}
-        >
-          <motion.div className="text-content" variants={pageLoaders.child}>
+          className="page__background"
+          initial={{ width: "100%" }}
+          animate={loadPage}
+          exit={{
+            width: "100%",
+            left: [-100, 0],
+            skewX: [0, -3, 0],
+            transition: { duration: 1.2, ease: portfolio.ease },
+          }}
+        ></motion.div>,
+        document.getElementById("portal")
+      )}
+
+      <section className="landing-page grid">
+        <div className="description">
+          <div className="text-content">
             <Reveal>
               <h2>Ahoy!</h2>
             </Reveal>
@@ -91,16 +48,18 @@ export default function Homepage() {
                 Greek islands of the Aegean and Mediterranean Sea
               </p>
             </Reveal>
-          </motion.div>
-          <Reveal delay={2.5}>
+          </div>
+          <Reveal delay={0.5}>
             <div className="button-container">
-              <button className="secondary-button">Request callback</button>
+              <button className="secondary-button">
+                <Link to="/contact">Request callback</Link>
+              </button>
               <button className="primary-button">
-                <Link to="/fleet/eldoris">Go to fleet</Link>
+                <Link to="/fleet">Go to fleet</Link>
               </button>
             </div>
           </Reveal>
-        </motion.div>
+        </div>
       </section>
     </motion.main>
   );

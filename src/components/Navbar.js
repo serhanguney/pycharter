@@ -2,6 +2,8 @@ import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
 import { animate, motion } from "framer-motion";
+import Instagram from "../icons/instagram.js";
+import Facebook from "../icons/facebook.js";
 
 export default function Navbar() {
   const {
@@ -75,7 +77,13 @@ export default function Navbar() {
   }, [portfolio.menuOpen, motionEase]);
 
   return (
-    <header id="navbar">
+    <motion.header
+      id="navbar"
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -100, opacity: 0 }}
+      transition={{ duration: duration, ease: portfolio.ease }}
+    >
       {width < 620 ? (
         <>
           <h2>PYC</h2>
@@ -86,8 +94,8 @@ export default function Navbar() {
             }
           >
             <motion.svg
-              width="35"
-              height="35"
+              width="30"
+              height="30"
               viewBox="0 0 14 12"
               fill="none"
               initial="initial"
@@ -121,8 +129,8 @@ export default function Navbar() {
             </motion.svg>
 
             <motion.svg
-              width="55"
-              height="55"
+              width="45"
+              height="45"
               viewBox="0 0 58 58"
               fill="none"
               initial="initial"
@@ -154,16 +162,23 @@ export default function Navbar() {
         </>
       ) : (
         <>
-          <h2>Private Yacht Charter</h2>
+          <h2>{width < 960 ? "PYC" : "Private Yacht Charter"}</h2>
           <div className="navigation">
             <Link to="/">Home</Link>
             <Link to="/fleet">Fleet</Link>
-            <Link to="/destinations">Destinations</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
           </div>
+          <div className="media__icons">
+            <a href="https://instagram.com" target="_blank">
+              <Instagram />
+            </a>
+            <a href="https://facebook.com" target="_blank">
+              <Facebook />
+            </a>
+          </div>
         </>
       )}
-    </header>
+    </motion.header>
   );
 }

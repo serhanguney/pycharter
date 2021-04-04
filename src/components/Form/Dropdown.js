@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { fleet } from "../../boats/boats";
-import required from "../../icons/required.png";
+import required from "../../icons/required.svg";
 import { motion } from "framer-motion";
+import dropdownArrow from "../../icons/dropdownArrow.svg";
 export default function Dropdown({ state, formVariants }) {
   const [open, setOpen] = useState(false);
   const { values, setValues, errors, setErrors } = state;
@@ -12,9 +13,14 @@ export default function Dropdown({ state, formVariants }) {
     setErrors({ ...errors, [name]: null });
     setOpen(false);
   }
+  const arrowVariants = {
+    initial: { rotate: 0 },
+    animate: { rotate: 180 },
+  };
   return (
     <>
       <label htmlFor="boat">Boat Interested</label>
+
       <input
         type="button"
         id="boat"
@@ -29,6 +35,15 @@ export default function Dropdown({ state, formVariants }) {
         alt="required"
         className={errors.boat ? "visible" : "invisible"}
       />
+      <motion.img
+        src={dropdownArrow}
+        alt="dropdown arrow"
+        initial="initial"
+        animate={open ? "animate" : "initial"}
+        transition={{ duration: 0.4 }}
+        variants={arrowVariants}
+      />
+
       <ul className={`dropdown ${open ? "visible" : "invisible"}`}>
         {fleet.map((item, index) => (
           <li

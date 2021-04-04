@@ -1,12 +1,35 @@
 import React, { useContext } from "react";
+import ReactDom from "react-dom";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import { Portfolio } from "../context";
+import { useEffect } from "react/cjs/react.development";
 
 export default function About() {
-  const { motionMenu } = useContext(Portfolio);
+  const {
+    motionMenu,
+    loadPage,
+    pageTransition,
+    portfolio: { ease },
+  } = useContext(Portfolio);
+
+  useEffect(() => pageTransition(), []);
   return (
     <motion.main id="about" className="grid" style={{ y: motionMenu }}>
+      {ReactDom.createPortal(
+        <motion.div
+          className="page__background"
+          initial={{ width: "100%" }}
+          animate={loadPage}
+          exit={{
+            width: "100%",
+            left: [-100, 0],
+            skewX: [0, -3, 0],
+            transition: { duration: 1.2, ease: ease },
+          }}
+        ></motion.div>,
+        document.getElementById("portal")
+      )}
       <section className="text-content">
         <Reveal delay={0.5}>
           <h2>About</h2>

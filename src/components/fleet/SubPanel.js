@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useContext } from "react";
 import { Portfolio } from "../../context";
 import { animate, useMotionValue, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function SubPanel() {
   const features = [
@@ -90,7 +91,7 @@ export default function SubPanel() {
           variants={buttonVariants}
           className="secondary-button"
         >
-          Make an inquiry
+          <Link to="/contact">Make an inquiry</Link>
         </motion.button>
       )}
     </div>

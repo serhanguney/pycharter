@@ -4,7 +4,7 @@
   min-height: calc(var(--vh, 1vh) * 100);
   width: 100%;
   padding-top: 150px;
-  background-color: $lightest-color;
+  background-image: linear-gradient(to right, #edfcff, #edfcff37);
   z-index: 1;
   @media screen and (max-width: 620px) {
     padding-top: 100px;
@@ -51,6 +51,7 @@
             border-color: $main-color;
           }
         }
+
         .dropdown-label {
           width: 100%;
           height: 48px;
@@ -62,7 +63,9 @@
           background-color: white;
           cursor: pointer;
           -webkit-appearance: none;
+          text-align: left;
         }
+
         .dropdown {
           position: absolute;
           top: 100%;
@@ -85,8 +88,15 @@
         }
         img {
           position: absolute;
-          top: 50%;
+          top: 60%;
           right: 10%;
+          transform-origin: center center;
+          @media screen and (max-width: 960px) {
+            right: 15%;
+          }
+          @media screen and (max-width: 620px) {
+            right: 8%;
+          }
         }
       }
 
@@ -172,6 +182,12 @@
     grid-column: 8/13;
     overflow: hidden;
     padding: 130px 40px 0 40px;
+    background-image: url(../../images/submitted.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+
     @media screen and (max-width: 620px) {
       display: none;
     }
@@ -193,6 +209,34 @@
         width: 100%;
         height: auto;
       }
+    }
+  }
+  .submitted__form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 2/8;
+    height: 500px;
+    @media screen and (max-width: 620px) {
+      grid-column: 1/-1;
+      padding: 0 40px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+    button {
+      margin: 40px 0;
+    }
+    svg {
+      position: absolute;
+      top: 0;
+      left: 10%;
+      width: 70% !important;
+      pointer-events: none;
     }
   }
 }

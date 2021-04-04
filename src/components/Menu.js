@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Facebook from "../icons/facebook";
+import Instagram from "../icons/instagram";
 
 export default function Menu({ close, menuOpen }) {
   const options = [
@@ -31,18 +33,22 @@ export default function Menu({ close, menuOpen }) {
     },
   };
   return (
-    <div id="menu" className={menuOpen ? "active" : "inactive"}>
+    <motion.div
+      id="menu"
+      className={menuOpen ? "active" : "inactive"}
+      initial="initial"
+      animate={menuOpen ? "animate" : "initial"}
+      variants={menuVariants}
+    >
       {options.map((item, index) => (
-        <motion.p
-          key={index}
-          onClick={close}
-          initial="initial"
-          animate={menuOpen ? "animate" : "initial"}
-          variants={menuVariants}
-        >
+        <p key={index} onClick={close}>
           <Link to={item.path}>{item.name}</Link>
-        </motion.p>
+        </p>
       ))}
-    </div>
+      <div className="media__icons">
+        <Instagram />
+        <Facebook />
+      </div>
+    </motion.div>
   );
 }

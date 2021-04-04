@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import validate from "../Form/validate";
 import Dropdown from "./Dropdown";
 import required from "../../icons/required.svg";
-import { motion } from "framer-motion";
+import lottie from "lottie-web";
+import data from "../../images/confetti.json";
 
 export default function Form() {
+  let container = useRef(null);
   const {
     handleChange,
     handleSubmit,
@@ -16,49 +19,32 @@ export default function Form() {
     setErrors,
     submitted,
   } = useForm(validate);
-  // useEffect(() => console.log(values), [values]);
-  const ease = [0.46, 0.03, 0.52, 0.96];
-  const formVariants = {
-    parent: {
-      initial: { opacity: 1 },
-      animate: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.1,
-          delay: 0.5,
-          when: "beforeChildren",
-        },
-      },
-      exit: {
-        opacity: 1,
-        transition: {
-          staggerChildren: 0.1,
-        },
-      },
-    },
-    children: {
-      initial: { scale: 0.5, opacity: 0 },
-      animate: {
-        scale: 1,
-        opacity: 1,
-        transition: { duration: 0.5, ease: ease },
-      },
-      exit: {
-        scale: 0.5,
-        opacity: 0,
-        transition: { duration: 0.5, ease: ease },
-      },
-    },
-  };
+  useEffect(() => {
+    const anim = lottie.loadAnimation({
+      container: container,
+      renderer: "svg",
+      loop: false,
+      autoplay: false,
+      animationData: data,
+    });
+    if (submitted && container) {
+      anim.play();
+    }
+  }, [submitted]);
 
-  return (
-    <motion.form
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={formVariants.parent}
-    >
-      <motion.div className="form-element" variants={formVariants.children}>
+  return submitted ? (
+    <>
+      <div ref={(el) => (container = el)} className="submitted__form">
+        <h2>Your message is received!</h2>
+        <p>A member of our team will be getting in touch with you very soon.</p>
+        <button className="primary-button">
+          <Link to="/">Go to homepage</Link>
+        </button>
+      </div>
+    </>
+  ) : (
+    <form>
+      <div className="form-element">
         <label htmlFor="fullName">Your Name</label>
         <input
           type="text"
@@ -74,8 +60,8 @@ export default function Form() {
           alt="required"
           className={errors.fullName ? "visible" : "invisible"}
         />
-      </motion.div>
-      <motion.div className="form-element" variants={formVariants.children}>
+      </div>
+      <div className="form-element">
         <label htmlFor="mobile">Your Mobile</label>
         <input
           type="number"
@@ -83,8 +69,8 @@ export default function Form() {
           name="mobile"
           onChange={(e) => handleChange(e)}
         />
-      </motion.div>
-      <motion.div className="form-element" variants={formVariants.children}>
+      </div>
+      <div className="form-element">
         <label htmlFor="from">Your Email</label>
         <input
           type="email"
@@ -100,19 +86,19 @@ export default function Form() {
           alt="required"
           className={errors.from ? "visible" : "invisible"}
         />
-      </motion.div>
-      <motion.div className="form-element" variants={formVariants.children}>
+      </div>
+      <div className="form-element">
         <Dropdown state={{ values, setValues, errors, setErrors }} />
-      </motion.div>
-      <motion.div className="form-message" variants={formVariants.children}>
+      </div>
+      <div className="form-message">
         <label htmlFor="message">Your Message</label>
         <textarea
           name="message"
           id="message"
           onChange={(e) => handleChange(e)}
         />
-      </motion.div>
-      <motion.div className="submit-section" variants={formVariants.children}>
+      </div>
+      <div className="submit-section">
         <div className="checkbox">
           <input type="checkbox" id="checkbox" />
           <label htmlFor="checkbox">
@@ -127,7 +113,7 @@ export default function Form() {
         >
           {submitted ? "Submitted" : "Submit"}
         </button>
-      </motion.div>
-    </motion.form>
+      </div>
+    </form>
   );
 }
