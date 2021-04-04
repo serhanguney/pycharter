@@ -37,9 +37,9 @@ export default function Form() {
       <div ref={(el) => (container = el)} className="submitted__form">
         <h2>Your message is received!</h2>
         <p>A member of our team will be getting in touch with you very soon.</p>
-        <button className="primary-button">
-          <Link to="/">Go to homepage</Link>
-        </button>
+        <Link to="/">
+          <button className="primary-button">Go to homepage</button>
+        </Link>
       </div>
     </>
   ) : (

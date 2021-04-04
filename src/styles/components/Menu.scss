@@ -2,8 +2,7 @@
   position: fixed;
   height: 50vh;
   height: calc(var(--vh, 1vh) * 50);
-  padding: 40px;
-  padding-top: 10vh;
+  padding: 10vh 40px 20px 40px;
   padding-top: calc(var(--vh, 1vh) * 10);
   top: 0;
   left: 0;
@@ -11,16 +10,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: -1;
-  p {
+
+  a {
     margin: 10px 0;
-    a {
-      font-size: 18px;
-    }
+    font-size: 18px;
   }
+
   .media__icons {
     display: flex;
-    margin: auto 0 0 0;
+    margin: auto 0 0 auto;
     svg {
       transform: scale(1.4);
       fill: $text-color;

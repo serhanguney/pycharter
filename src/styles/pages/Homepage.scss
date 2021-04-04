@@ -1,9 +1,12 @@
 #homepage {
-  background-image: url("../../images/eldorisTheme.jpg");
+  background-image: url("../../images/desktopYachtLanding.jpg");
   background-position: 50% 10%;
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  @media screen and (max-width: 620px) {
+    background-image: url("../../images/mobileHomeCover.jpg");
+  }
   .landing-page {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);

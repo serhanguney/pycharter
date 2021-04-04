@@ -1,18 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import ReactDom from "react-dom";
 import Reveal from "../components/Reveal";
+import Overlay from "../components/Overlay";
 import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
 import { motion } from "framer-motion";
-import content from "../content/content";
 export default function Homepage() {
-  const {
-    loadPage,
-    pageTransition,
-    motionMenu,
-    setPortfolio,
-    portfolio,
-  } = useContext(Portfolio);
+  const { loadPage, pageTransition, motionMenu, portfolio } = useContext(
+    Portfolio
+  );
 
   useEffect(() => pageTransition(), []);
   // function handleLanguage() {
@@ -22,17 +18,7 @@ export default function Homepage() {
   return (
     <motion.main id="homepage" style={{ y: motionMenu }}>
       {ReactDom.createPortal(
-        <motion.div
-          className="page__background"
-          initial={{ width: "100%" }}
-          animate={loadPage}
-          exit={{
-            width: "100%",
-            left: [-100, 0],
-            skewX: [0, -3, 0],
-            transition: { duration: 1.2, ease: portfolio.ease },
-          }}
-        ></motion.div>,
+        <Overlay loadPage={loadPage} ease={portfolio.ease} />,
         document.getElementById("portal")
       )}
 
@@ -54,9 +40,9 @@ export default function Homepage() {
               <button className="secondary-button">
                 <Link to="/contact">Request callback</Link>
               </button>
-              <button className="primary-button">
-                <Link to="/fleet">Go to fleet</Link>
-              </button>
+              <Link to="/fleet">
+                <button className="primary-button">Go to fleet</button>
+              </Link>
             </div>
           </Reveal>
         </div>

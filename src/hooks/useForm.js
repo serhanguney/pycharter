@@ -44,7 +44,7 @@ export default function useForm(validate) {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       submit();
     }
-  }, [errors]);
+  }, [errors, isSubmitting, values]);
 
   return {
     handleChange,

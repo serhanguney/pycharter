@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ReactDom from "react-dom";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import { Portfolio } from "../context";
-import { useEffect } from "react/cjs/react.development";
+import Overlay from "../components/Overlay";
 
 export default function About() {
   const {
@@ -17,17 +17,7 @@ export default function About() {
   return (
     <motion.main id="about" className="grid" style={{ y: motionMenu }}>
       {ReactDom.createPortal(
-        <motion.div
-          className="page__background"
-          initial={{ width: "100%" }}
-          animate={loadPage}
-          exit={{
-            width: "100%",
-            left: [-100, 0],
-            skewX: [0, -3, 0],
-            transition: { duration: 1.2, ease: ease },
-          }}
-        ></motion.div>,
+        <Overlay loadPage={loadPage} ease={ease} />,
         document.getElementById("portal")
       )}
       <section className="text-content">

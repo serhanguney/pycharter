@@ -1,9 +1,7 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
-import ReactDom from "react-dom";
+import React, { useEffect, useRef, useContext } from "react";
 import useSlider from "../../hooks/useSlider";
-import Modal from "../Modal";
 import Pagination from "./Pagination";
-import { animate, AnimatePresence, motion } from "framer-motion";
+import { animate, motion } from "framer-motion";
 import { Portfolio } from "../../context";
 
 export default function Slider({ images }) {
@@ -26,9 +24,6 @@ export default function Slider({ images }) {
       transition: motionTransition,
     }),
   };
-
-  //can't use the reducer for modal because it triggers the useeffect unnecessarily
-  const [modal, setModal] = useState(false);
 
   //handle clicks using reducers.
   //Notice the slide.no conditions; without them at the edge of limits the animations get buggy.
@@ -69,7 +64,6 @@ export default function Slider({ images }) {
             style={{ x: slideMotionValue }}
             key={index}
             className="image-container"
-            onClick={() => setModal(true)}
           >
             <motion.img
               custom={index}
@@ -85,16 +79,6 @@ export default function Slider({ images }) {
       </div>
       <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
       <Pagination slide={slide} array={images} />
-
-      {/* {modal &&
-        ReactDom.createPortal(
-          <Modal key={2} close={() => setModal(false)}>
-            <div className="image-container">
-              <img src={images[slide.no]} alt="boat" />
-            </div>
-          </Modal>,
-          document.getElementById("portal")
-        )} */}
     </div>
   );
 }

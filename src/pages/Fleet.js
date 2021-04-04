@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ReactDom from "react-dom";
 import { fleet } from "../boats/boats";
 import rightArrow from "../icons/rightArrow.svg";
@@ -6,7 +6,7 @@ import Reveal from "../components/Reveal";
 import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import { Portfolio } from "../context";
-import { useEffect } from "react/cjs/react.development";
+import Overlay from "../components/Overlay";
 
 export default function Fleet() {
   const {
@@ -72,17 +72,7 @@ export default function Fleet() {
   return (
     <motion.main id="fleet" className="grid" style={{ y: motionMenu }}>
       {ReactDom.createPortal(
-        <motion.div
-          className="page__background"
-          initial={{ width: "100%" }}
-          animate={loadPage}
-          exit={{
-            width: "100%",
-            left: [-100, 0],
-            skewX: [0, -3, 0],
-            transition: { duration: 1.2, ease: ease },
-          }}
-        ></motion.div>,
+        <Overlay loadPage={loadPage} ease={ease} />,
         document.getElementById("portal")
       )}
       <section className="text-content">
@@ -107,11 +97,7 @@ export default function Fleet() {
       <section className="visual-content">
         {fleet.map((item, index) => (
           <div key={index} className="yacht-card">
-            <img
-              className="card-image"
-              src={item.coverImage}
-              alt="cover image"
-            />
+            <img className="card-image" src={item.coverImage} alt="cover" />
             <motion.div
               className="yacht-features"
               name={item.name}

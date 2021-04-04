@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ReactDom from "react-dom";
 import SubPanel from "../components/fleet/SubPanel";
 import Slider from "../components/fleet/Slider";
@@ -12,12 +12,18 @@ import { Portfolio } from "../context";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
-import { useEffect } from "react/cjs/react.development";
+import Overlay from "../components/Overlay";
+import mobileLanding from "../images/mobileYachtLanding.jpg";
+import desktopLanding from "../images/aboutCover.jpg";
 
 export default function Yacht() {
-  const { portfolio, motionMenu, loadPage, pageTransition } = useContext(
-    Portfolio
-  );
+  const {
+    portfolio,
+    motionMenu,
+    loadPage,
+    pageTransition,
+    dimensions: { width },
+  } = useContext(Portfolio);
   const { boat } = useParams();
   const activeBoat = fleet.find((item) => item.name.toLowerCase() === boat);
   const {
@@ -29,7 +35,6 @@ export default function Yacht() {
     features,
     coverImage,
     images,
-    landingImage,
   } = activeBoat;
   useEffect(() => {
     window.scrollTo({
@@ -41,21 +46,11 @@ export default function Yacht() {
   return (
     <motion.main id="yacht" style={{ y: motionMenu }}>
       {ReactDom.createPortal(
-        <motion.div
-          className="page__background"
-          initial={{ width: "100%" }}
-          animate={loadPage}
-          exit={{
-            width: "100%",
-            left: [-100, 0],
-            skewX: [0, -3, 0],
-            transition: { duration: 1.2, ease: portfolio.ease },
-          }}
-        ></motion.div>,
+        <Overlay loadPage={loadPage} ease={portfolio.ease} />,
         document.getElementById("portal")
       )}
       <section id="landing-page" className="grid">
-        <img src={landingImage} alt="landing image" />
+        <img src={width < 620 ? mobileLanding : desktopLanding} alt="landing" />
         <div className="description">
           <div className="text-content">
             <Reveal delay={0.2}>

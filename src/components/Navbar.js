@@ -74,7 +74,7 @@ export default function Navbar() {
         animate(motionMenu, 0, { ease: motionEase, duration: duration });
       }
     }
-  }, [portfolio.menuOpen, motionEase]);
+  }, [portfolio.menuOpen, height, motionMenu]);
 
   return (
     <motion.header
@@ -170,10 +170,18 @@ export default function Navbar() {
             <Link to="/contact">Contact</Link>
           </div>
           <div className="media__icons">
-            <a href="https://instagram.com" target="_blank">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Instagram />
             </a>
-            <a href="https://facebook.com" target="_blank">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Facebook />
             </a>
           </div>

@@ -30,6 +30,7 @@ export default function Menu({ close, menuOpen }) {
     },
     animate: {
       opacity: 1,
+      transition: { duration: 1.2 },
     },
   };
   return (
@@ -41,13 +42,25 @@ export default function Menu({ close, menuOpen }) {
       variants={menuVariants}
     >
       {options.map((item, index) => (
-        <p key={index} onClick={close}>
-          <Link to={item.path}>{item.name}</Link>
-        </p>
+        <Link key={index} to={item.path} onClick={close}>
+          {item.name}
+        </Link>
       ))}
       <div className="media__icons">
-        <Instagram />
-        <Facebook />
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Instagram />
+        </a>
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Facebook />
+        </a>
       </div>
     </motion.div>
   );
