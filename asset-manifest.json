@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pycharter/static/css/main.e87c6487.chunk.css",
-    "main.js": "/pycharter/static/js/main.e4c34587.chunk.js",
-    "main.js.map": "/pycharter/static/js/main.e4c34587.chunk.js.map",
+    "main.css": "/pycharter/static/css/main.a6fe7c12.chunk.css",
+    "main.js": "/pycharter/static/js/main.1b7b7c46.chunk.js",
+    "main.js.map": "/pycharter/static/js/main.1b7b7c46.chunk.js.map",
     "runtime-main.js": "/pycharter/static/js/runtime-main.29819a89.js",
     "runtime-main.js.map": "/pycharter/static/js/runtime-main.29819a89.js.map",
-    "static/js/2.aeaa8666.chunk.js": "/pycharter/static/js/2.aeaa8666.chunk.js",
-    "static/js/2.aeaa8666.chunk.js.map": "/pycharter/static/js/2.aeaa8666.chunk.js.map",
+    "static/js/2.e0f62c6a.chunk.js": "/pycharter/static/js/2.e0f62c6a.chunk.js",
+    "static/js/2.e0f62c6a.chunk.js.map": "/pycharter/static/js/2.e0f62c6a.chunk.js.map",
     "index.html": "/pycharter/index.html",
-    "static/css/main.e87c6487.chunk.css.map": "/pycharter/static/css/main.e87c6487.chunk.css.map",
-    "static/js/2.aeaa8666.chunk.js.LICENSE.txt": "/pycharter/static/js/2.aeaa8666.chunk.js.LICENSE.txt",
+    "static/css/main.a6fe7c12.chunk.css.map": "/pycharter/static/css/main.a6fe7c12.chunk.css.map",
+    "static/js/2.e0f62c6a.chunk.js.LICENSE.txt": "/pycharter/static/js/2.e0f62c6a.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/pycharter/static/media/submitted.5a686a4a.png",
     "static/media/camaronBed-1.5d2f6205.jpg": "/pycharter/static/media/camaronBed-1.5d2f6205.jpg",
     "static/media/camaronBed-2.ae23cdf5.jpg": "/pycharter/static/media/camaronBed-2.ae23cdf5.jpg",
@@ -109,15 +109,17 @@
     "static/media/interior9.9cff780e.jpg": "/pycharter/static/media/interior9.9cff780e.jpg",
     "static/media/interior9.aa4dd9ec.jpg": "/pycharter/static/media/interior9.aa4dd9ec.jpg",
     "static/media/megalodonCover.6ffc44aa.jpg": "/pycharter/static/media/megalodonCover.6ffc44aa.jpg",
-    "static/media/mobileYachtLanding.745a1f8b.jpg": "/pycharter/static/media/mobileYachtLanding.745a1f8b.jpg",
+    "static/media/mobileYachtLanding.cd0eecb4.jpg": "/pycharter/static/media/mobileYachtLanding.cd0eecb4.jpg",
     "static/media/required.b1971327.svg": "/pycharter/static/media/required.b1971327.svg",
     "static/media/rightArrow.e10a7c60.svg": "/pycharter/static/media/rightArrow.e10a7c60.svg",
+    "static/media/sliderArrowLeft.3f13d4f6.svg": "/pycharter/static/media/sliderArrowLeft.3f13d4f6.svg",
+    "static/media/sliderArrowRight.87f4df63.svg": "/pycharter/static/media/sliderArrowRight.87f4df63.svg",
     "static/media/snoopyCover.96e35a37.jpeg": "/pycharter/static/media/snoopyCover.96e35a37.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.29819a89.js",
-    "static/js/2.aeaa8666.chunk.js",
-    "static/css/main.e87c6487.chunk.css",
-    "static/js/main.e4c34587.chunk.js"
+    "static/js/2.e0f62c6a.chunk.js",
+    "static/css/main.a6fe7c12.chunk.css",
+    "static/js/main.1b7b7c46.chunk.js"
   ]
 }
