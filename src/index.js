@@ -7,5 +7,5 @@ ReactDOM.render(
   <Router basename="pycharter">
     <App />
   </Router>,
-  document.getElementById("root")
+  document.getElementById("py-charter")
 );

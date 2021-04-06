@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Reveal from "../components/Reveal";
 import { Portfolio } from "../context";
 import Overlay from "../components/Overlay";
+import { content } from "../content/content";
 
 export default function About() {
   const {
@@ -11,6 +12,7 @@ export default function About() {
     loadPage,
     pageTransition,
     portfolio: { ease },
+    portfolio,
   } = useContext(Portfolio);
 
   useEffect(() => pageTransition(), []);
@@ -22,29 +24,16 @@ export default function About() {
       )}
       <section className="text-content">
         <Reveal delay={0.5}>
-          <h2>About</h2>
+          <h2>{content[portfolio.language].about.title}</h2>
         </Reveal>
         <Reveal delay={0.5}>
-          <p>
-            A unique blue cruise experience on the magnificent bays and Greek
-            islands of the Aegean and Mediterranean Sea
-          </p>
+          <p>{content[portfolio.language].about.paragraph1}</p>
         </Reveal>
         <Reveal delay={0.5}>
-          <p>
-            A unique blue cruise experience on the magnificent bays and Greek
-            islands of the Aegean and Mediterranean Sea a unique blue cruise
-            experience on the magnificent bays and Greek islands of the Aegean
-            and Mediterranean Sea
-          </p>
+          <p>{content[portfolio.language].about.paragraph2}</p>
         </Reveal>
         <Reveal delay={0.5}>
-          <p>
-            A unique blue cruise experience on the magnificent bays and Greek
-            islands of the Aegean and Mediterranean Sea a unique blue cruise
-            experience on the magnificent bays and Greek islands of the Aegean
-            and Mediterranean Sea
-          </p>
+          <p>{content[portfolio.language].about.paragraph3}</p>
         </Reveal>
       </section>
       <section className="visual-content"></section>

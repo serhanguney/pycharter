@@ -3,7 +3,8 @@ import useSlider from "../../hooks/useSlider";
 import Pagination from "./Pagination";
 import { animate, motion } from "framer-motion";
 import { Portfolio } from "../../context";
-
+import rightArrow from "../../icons/sliderArrowRight.svg";
+import leftArrow from "../../icons/sliderArrowLeft.svg";
 export default function Slider({ images }) {
   //create a state and fetch its reducers using custom hook
   const { slide, nextSlide, previousSlide, slideMotionValue } = useSlider();
@@ -57,7 +58,9 @@ export default function Slider({ images }) {
   }, [width]);
   return (
     <div className="slider grid">
-      <button name="previous" onClick={(e) => handleClick(e)}>{`<`}</button>
+      <button name="previous" onClick={(e) => handleClick(e)}>
+        <img src={leftArrow} alt="left arrow" />
+      </button>
       <div ref={(el) => (gallery = el)} className="gallery">
         {images.map((image, index) => (
           <motion.div
@@ -77,7 +80,9 @@ export default function Slider({ images }) {
           </motion.div>
         ))}
       </div>
-      <button name="next" onClick={(e) => handleClick(e)}>{`>`}</button>
+      <button name="next" onClick={(e) => handleClick(e)}>
+        <img src={rightArrow} alt="right arrow" />
+      </button>
       <Pagination slide={slide} array={images} />
     </div>
   );

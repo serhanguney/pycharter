@@ -14,6 +14,7 @@ export default function Fleet() {
     loadPage,
     pageTransition,
     portfolio: { ease },
+    portfolio,
   } = useContext(Portfolio);
   const history = useHistory();
 
@@ -100,7 +101,7 @@ export default function Fleet() {
             <img className="card-image" src={item.coverImage} alt="cover" />
             <motion.div
               className="yacht-features"
-              name={item.name}
+              name={item[portfolio.language].name}
               initial="initial"
               animate="animate"
               exit="exit"
@@ -116,13 +117,13 @@ export default function Fleet() {
                   className="container-title"
                   variants={hoverVariants.title}
                 >
-                  {item.name}
+                  {item[portfolio.language].name}
                 </motion.h1>
                 <motion.h3 variants={hoverVariants.text} custom={0}>
-                  {item.subTitle}
+                  {item[portfolio.language].subTitle}
                 </motion.h3>
                 <motion.p
-                  name={item.name}
+                  name={item[portfolio.language].name}
                   onClick={(e) => handleClick(e)}
                   variants={hoverVariants.text}
                   custom={1}

@@ -5,15 +5,13 @@ import Overlay from "../components/Overlay";
 import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
 import { motion } from "framer-motion";
+import { content } from "../content/content";
 export default function Homepage() {
   const { loadPage, pageTransition, motionMenu, portfolio } = useContext(
     Portfolio
   );
 
   useEffect(() => pageTransition(), []);
-  // function handleLanguage() {
-  //   setPortfolio({ ...portfolio, language: "tur" });
-  // }
 
   return (
     <motion.main id="homepage" style={{ y: motionMenu }}>
@@ -26,22 +24,25 @@ export default function Homepage() {
         <div className="description">
           <div className="text-content">
             <Reveal>
-              <h2>Ahoy!</h2>
+              <h2>{content[portfolio.language].homepage.description.title}</h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p>
-                A unique blue cruise experience on the magnificent bays and
-                Greek islands of the Aegean and Mediterranean Sea
+                {content[portfolio.language].homepage.description.paragraph}
               </p>
             </Reveal>
           </div>
           <Reveal delay={0.5}>
             <div className="button-container">
               <button className="secondary-button">
-                <Link to="/contact">Request callback</Link>
+                <Link to="/contact">
+                  {content[portfolio.language].homepage.buttons.secondary}
+                </Link>
               </button>
               <Link to="/fleet">
-                <button className="primary-button">Go to fleet</button>
+                <button className="primary-button">
+                  {content[portfolio.language].homepage.buttons.primary}
+                </button>
               </Link>
             </div>
           </Reveal>

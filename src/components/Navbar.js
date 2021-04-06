@@ -63,6 +63,16 @@ export default function Navbar() {
       transition: { ease: motionEase, duration: duration, delay: 0.4 },
     },
   };
+  function handleMenu() {
+    if (!motionMenu.isAnimating()) {
+      setPortfolio({ ...portfolio, menuOpen: !portfolio.menuOpen });
+    }
+  }
+  function handleScroll() {
+    if (portfolio.menuOpen) {
+      setPortfolio({ ...portfolio, menuOpen: false });
+    }
+  }
   useEffect(() => {
     if (!motionMenu.isAnimating()) {
       if (portfolio.menuOpen) {
@@ -71,9 +81,16 @@ export default function Navbar() {
           duration: duration,
         });
       } else {
-        animate(motionMenu, 0, { ease: motionEase, duration: duration });
+        animate(motionMenu, 0, {
+          ease: motionEase,
+          duration: duration,
+        });
       }
     }
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, [portfolio.menuOpen, height, motionMenu]);
 
   return (
@@ -87,12 +104,7 @@ export default function Navbar() {
       {width < 620 ? (
         <>
           <h2>PYC</h2>
-          <span
-            className="menu-icon"
-            onClick={() =>
-              setPortfolio({ ...portfolio, menuOpen: !portfolio.menuOpen })
-            }
-          >
+          <span className="menu-icon" onClick={handleMenu}>
             <motion.svg
               width="30"
               height="30"
@@ -163,6 +175,7 @@ export default function Navbar() {
       ) : (
         <>
           <h2>{width < 960 ? "PYC" : "Private Yacht Charter"}</h2>
+
           <div className="navigation">
             <Link to="/">Home</Link>
             <Link to="/fleet">Fleet</Link>

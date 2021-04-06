@@ -15,6 +15,7 @@ import Reveal from "../components/Reveal";
 import Overlay from "../components/Overlay";
 import mobileLanding from "../images/mobileYachtLanding.jpg";
 import desktopLanding from "../images/aboutCover.jpg";
+import { content } from "../content/content";
 
 export default function Yacht() {
   const {
@@ -25,7 +26,9 @@ export default function Yacht() {
     dimensions: { width },
   } = useContext(Portfolio);
   const { boat } = useParams();
-  const activeBoat = fleet.find((item) => item.name.toLowerCase() === boat);
+  const activeBoat = fleet.find(
+    (item) => item[portfolio.language].name.toLowerCase() === boat
+  );
   const {
     title,
     subTitle,
@@ -33,14 +36,20 @@ export default function Yacht() {
     description,
     specs,
     features,
-    coverImage,
-    images,
-  } = activeBoat;
+  } = activeBoat[portfolio.language];
+  const { coverImage, images } = activeBoat;
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
     });
+
+    const navbar = document.getElementById("navbar");
+    navbar.style.position = "absolute";
     pageTransition();
+    return () => {
+      navbar.style.position = "fixed";
+    };
   }, []);
 
   return (
@@ -78,9 +87,13 @@ export default function Yacht() {
           <Reveal delay={0.4}>
             <div className="button-container">
               <button className="secondary-button">
-                <Link to="/contact">Request callback</Link>
+                <Link to="/contact">
+                  {content[portfolio.language].yacht.buttons.secondary}
+                </Link>
               </button>
-              <button className="primary-button">View Gallery</button>
+              <button className="primary-button">
+                {content[portfolio.language].yacht.buttons.primary}
+              </button>
             </div>
           </Reveal>
         </div>
@@ -92,18 +105,20 @@ export default function Yacht() {
           <h2>{subTitle}</h2>
           <ul>
             <li>
-              <span />8 Guests
-            </li>
-            <li>
-              <span />4 Cabins
+              <span />
+              {specs.capacity}
             </li>
             <li>
               <span />
-              Info
+              {specs.length}
             </li>
             <li>
               <span />
-              Info
+              {specs.motor}
+            </li>
+            <li>
+              <span />
+              {specs.fuel}
             </li>
           </ul>
           <p>{description}</p>
@@ -116,14 +131,14 @@ export default function Yacht() {
       <CallToAction />
       <section id="exterior" className="grid">
         <span className="title">
-          <h1>Exterior</h1>
+          <h1>{content[portfolio.language].yacht.exterior}</h1>
         </span>
         <Slider images={images.exterior} />
       </section>
       <Reviews />
       <section id="interior" className="grid">
         <span className="title">
-          <h1>Interior</h1>
+          <h1>{content[portfolio.language].yacht.interior}</h1>
         </span>
         <Slider images={images.interior} />
       </section>

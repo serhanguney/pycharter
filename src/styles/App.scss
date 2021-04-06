@@ -23,6 +23,7 @@
 }
 html {
   height: 100vh;
+  width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
   overflow-x: hidden;
   font-family: "Comfortaa", cursive;
@@ -108,6 +109,9 @@ a {
   @media screen and (max-width: 1200px) {
     font-size: 12px;
   }
+}
+#py-charter {
+  overflow: hidden;
 }
 //GLOBAL CLASSES
 .page__background {
@@ -221,7 +225,7 @@ a {
 }
 .active {
   pointer-events: auto;
-  z-index: 1;
+  z-index: 99;
 }
 .inactive {
   pointer-events: none;

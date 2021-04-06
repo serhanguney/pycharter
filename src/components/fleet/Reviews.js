@@ -1,17 +1,14 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { Portfolio } from "../../context";
+import { content } from "../../content/content";
 export default function Reviews() {
+  const { portfolio } = useContext(Portfolio);
   return (
     <section id="reviews" className="grid">
       <div className="content">
-        <h1>Reviews</h1>
-        <p>
-          In publishing and graphic design, Lorem ipsum is a placeholder text
-          commonly used to demonstrate the visual form of a document or a
-          typeface without relying on meaningful content. Lorem ipsum may be
-          used as a placeholder before final copy is available.
-        </p>
-        <h3>Serhan Guney, 2020</h3>
+        <h1>{content[portfolio.language].yacht.reviews.title}</h1>
+        <p>{content[portfolio.language].yacht.reviews.paragraph}</p>
+        <h3>{content[portfolio.language].yacht.reviews.author}</h3>
       </div>
     </section>
   );

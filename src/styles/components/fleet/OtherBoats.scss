@@ -19,7 +19,7 @@
     display: flex;
     scroll-snap-type: x mandatory;
     padding: 20px 0;
-    @media screen and (min-width: 620px) {
+    @media screen and (min-width: 1200px) {
       justify-content: center;
       align-items: center;
     }
@@ -33,8 +33,8 @@
       overflow: hidden;
       border-radius: 8px;
       box-shadow: 4px 0 20px $shadow-color;
+      flex-shrink: 0;
       @media screen and(max-width: 620px) {
-        flex-shrink: 0;
         max-width: 260px;
         margin: 0 20px;
       }

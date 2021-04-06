@@ -75,7 +75,7 @@ function App() {
     return () => window.removeEventListener("resize", debouncedHandleResize);
   }, [dimensions.height, dimensions.width]);
   return (
-    <div>
+    <>
       <Portfolio.Provider
         value={{
           portfolio,
@@ -108,7 +108,7 @@ function App() {
           )}
         />
       </Portfolio.Provider>
-    </div>
+    </>
   );
 }
 
