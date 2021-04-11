@@ -33,10 +33,11 @@ export default function useForm(validate) {
           "https://pacific-stream-49427.herokuapp.com/contact",
           values
         );
-        console.log(result);
+        setIsSubmitting(false);
         setSubmitted(true);
       } catch (err) {
-        console.log(err);
+        alert(err);
+        setIsSubmitting(false);
         setSubmitted(false);
       }
     };
@@ -55,5 +56,6 @@ export default function useForm(validate) {
     errors,
     setErrors,
     submitted,
+    isSubmitting,
   };
 }

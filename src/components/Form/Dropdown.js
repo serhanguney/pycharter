@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { fleet } from "../../boats/boats";
 import required from "../../icons/required.svg";
 import { motion } from "framer-motion";
 import dropdownArrow from "../../icons/dropdownArrow.svg";
-export default function Dropdown({ state, formVariants }) {
+import { Portfolio } from "../../context";
+export default function Dropdown({ state }) {
+  const { portfolio } = useContext(Portfolio);
   const [open, setOpen] = useState(false);
-  const { values, setValues, errors, setErrors } = state;
+  const { values, setValues, errors, setErrors, isSubmitting } = state;
   function handleClick(e) {
     const name = e.target.getAttribute("name");
     const targetValue = e.target.getAttribute("value");
@@ -44,15 +46,20 @@ export default function Dropdown({ state, formVariants }) {
         variants={arrowVariants}
       />
 
-      <ul className={`dropdown ${open ? "visible" : "invisible"}`}>
+      <ul
+        className={`dropdown ${open ? "visible" : "invisible"}`}
+        style={
+          isSubmitting ? { pointerEvents: "none" } : { pointerEvents: "auto" }
+        }
+      >
         {fleet.map((item, index) => (
           <li
             key={index}
             name="boat"
-            value={item.name}
+            value={item[portfolio.language].name}
             onMouseDown={(e) => handleClick(e)}
           >
-            {item.name}
+            {item[portfolio.language].name}
           </li>
         ))}
       </ul>

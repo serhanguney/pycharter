@@ -18,6 +18,7 @@ export default function Form() {
     errors,
     setErrors,
     submitted,
+    isSubmitting,
   } = useForm(validate);
   useEffect(() => {
     const anim = lottie.loadAnimation({
@@ -54,6 +55,7 @@ export default function Form() {
           onFocus={(e) => handleFocus(e)}
           className={errors.fullName ? "required" : ""}
           onChange={(e) => handleChange(e)}
+          disabled={isSubmitting}
         />
         <img
           src={required}
@@ -68,6 +70,7 @@ export default function Form() {
           id="mobile"
           name="mobile"
           onChange={(e) => handleChange(e)}
+          disabled={isSubmitting}
         />
       </div>
       <div className="form-element">
@@ -80,6 +83,7 @@ export default function Form() {
           onFocus={(e) => handleFocus(e)}
           className={errors.from ? "required" : ""}
           onChange={(e) => handleChange(e)}
+          disabled={isSubmitting}
         />
         <img
           src={required}
@@ -88,7 +92,9 @@ export default function Form() {
         />
       </div>
       <div className="form-element">
-        <Dropdown state={{ values, setValues, errors, setErrors }} />
+        <Dropdown
+          state={{ values, setValues, errors, setErrors, isSubmitting }}
+        />
       </div>
       <div className="form-message">
         <label htmlFor="message">Your Message</label>
@@ -96,22 +102,23 @@ export default function Form() {
           name="message"
           id="message"
           onChange={(e) => handleChange(e)}
+          disabled={isSubmitting}
         />
       </div>
       <div className="submit-section">
         <div className="checkbox">
-          <input type="checkbox" id="checkbox" />
+          <input type="checkbox" id="checkbox" disabled={isSubmitting} />
           <label htmlFor="checkbox">
             Legal consent text goes here, this is the selected state
           </label>
         </div>
         <button
           type="submit"
-          className={submitted ? "primary-button" : "tertiary-button"}
+          className={isSubmitting ? "button-submitting" : "primary-button"}
           style={{ pointerEvents: `${submitted ? "none" : "auto"}` }}
           onClick={(e) => handleSubmit(e)}
         >
-          {submitted ? "Submitted" : "Submit"}
+          {isSubmitting ? "Submit in process. Please wait..." : "Submit"}
         </button>
       </div>
     </form>

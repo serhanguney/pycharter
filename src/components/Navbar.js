@@ -106,6 +106,7 @@ export default function Navbar() {
           <h2>PYC</h2>
           <span className="menu-icon" onClick={handleMenu}>
             <motion.svg
+              id="waves"
               width="30"
               height="30"
               viewBox="0 0 14 12"
@@ -141,6 +142,7 @@ export default function Navbar() {
             </motion.svg>
 
             <motion.svg
+              id="circle"
               width="45"
               height="45"
               viewBox="0 0 58 58"

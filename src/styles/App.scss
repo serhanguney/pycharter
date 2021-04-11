@@ -168,10 +168,11 @@ a {
     font-size: 12px;
   }
 }
-.tertiary-button {
-  border: 1px solid $main-color;
-  background-color: white;
-  color: $main-color;
+.button-submitting {
+  pointer-events: none;
+  border: 1px solid white;
+  background-color: $border-color;
+  color: white;
   border-radius: 48px;
   @media screen and (max-width: 800px) {
     font-size: 12px;
@@ -207,6 +208,11 @@ a {
         }
       }
     }
+    @media screen and(max-width: 370px) {
+      * {
+        margin: 5px 0;
+      }
+    }
   }
   .button-container {
     display: flex;
@@ -214,13 +220,23 @@ a {
     margin-top: 50px;
     @media screen and (max-width: 620px) {
       flex-direction: column;
-      // padding-top: 10px;
+    }
+    @media screen and(max-width: 370px) {
+      * {
+        margin: 5px 0;
+      }
     }
   }
   @media screen and (max-width: 620px) {
     grid-column: 2 / 12;
     min-width: 320px;
     margin: 150px 0 0 0;
+  }
+  @media screen and(max-width: 370px) {
+    min-width: 200px;
+    margin: 100px 0 0 0;
+    padding: 10px;
+    height: 350px;
   }
 }
 .active {
@@ -231,6 +247,7 @@ a {
   pointer-events: none;
   z-index: -1;
 }
+
 .invisible {
   visibility: hidden;
 }

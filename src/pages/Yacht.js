@@ -43,13 +43,7 @@ export default function Yacht() {
     window.scrollTo({
       top: 0,
     });
-
-    const navbar = document.getElementById("navbar");
-    navbar.style.position = "absolute";
     pageTransition();
-    return () => {
-      navbar.style.position = "fixed";
-    };
   }, []);
 
   return (
@@ -80,7 +74,10 @@ export default function Yacht() {
                 <li>{specs.capacity}</li>
               </Reveal>
               <Reveal delay={0.6}>
-                <li>{specs.motor}</li>
+                <li>{specs.wc}</li>
+              </Reveal>
+              <Reveal delay={0.7}>
+                <li>{specs.additionals}</li>
               </Reveal>
             </ul>
           </div>
@@ -104,6 +101,12 @@ export default function Yacht() {
           <h1>{title}</h1>
           <h2>{subTitle}</h2>
           <ul>
+            {specs.staff !== "" ? (
+              <li>
+                <span />
+                {specs.staff}
+              </li>
+            ) : null}
             <li>
               <span />
               {specs.capacity}
