@@ -84,17 +84,6 @@ function App() {
         }}
       >
         <Navbar />
-        <p
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "40%",
-            color: "red",
-            zIndex: "9999",
-          }}
-        >
-          {dimensions.height}
-        </p>
         {dimensions.width < 620 ? (
           <Menu
             close={() => setPortfolio({ ...portfolio, menuOpen: false })}
