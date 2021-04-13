@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pycharter/static/css/main.3130df97.chunk.css",
-    "main.js": "/pycharter/static/js/main.587f1593.chunk.js",
-    "main.js.map": "/pycharter/static/js/main.587f1593.chunk.js.map",
+    "main.js": "/pycharter/static/js/main.7fd261c0.chunk.js",
+    "main.js.map": "/pycharter/static/js/main.7fd261c0.chunk.js.map",
     "runtime-main.js": "/pycharter/static/js/runtime-main.29819a89.js",
     "runtime-main.js.map": "/pycharter/static/js/runtime-main.29819a89.js.map",
     "static/js/2.e0f62c6a.chunk.js": "/pycharter/static/js/2.e0f62c6a.chunk.js",
@@ -120,6 +120,6 @@
     "static/js/runtime-main.29819a89.js",
     "static/js/2.e0f62c6a.chunk.js",
     "static/css/main.3130df97.chunk.css",
-    "static/js/main.587f1593.chunk.js"
+    "static/js/main.7fd261c0.chunk.js"
   ]
 }
