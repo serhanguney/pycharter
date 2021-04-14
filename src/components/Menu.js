@@ -1,4 +1,5 @@
 import React from "react";
+import Language from "./Language";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Facebook from "../icons/facebook";
@@ -46,7 +47,9 @@ export default function Menu({ close, menuOpen }) {
           {item.name}
         </Link>
       ))}
+
       <div className="media__icons">
+        <Language />
         <a
           href="https://instagram.com"
           target="_blank"

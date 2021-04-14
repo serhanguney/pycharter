@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from "react";
+import Language from "./Language";
 import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
 import { animate, motion } from "framer-motion";
@@ -183,6 +184,7 @@ export default function Navbar() {
             <Link to="/fleet">Fleet</Link>
             <Link to="/about">About</Link>
             <Link to="/contact">Contact</Link>
+            <Language />
           </div>
           <div className="media__icons">
             <a
