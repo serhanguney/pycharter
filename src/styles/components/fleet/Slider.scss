@@ -55,6 +55,7 @@
 
     @media screen and (max-width: 620px) {
       grid-column: 1/-1;
+      max-height: 500px;
     }
     .image-container {
       flex-shrink: 0;
@@ -62,9 +63,13 @@
       justify-content: center;
       width: 100%;
       overflow: hidden;
+      margin: 0 1px;
       img {
         width: auto;
         height: 100%;
+        @media screen and (max-width: 620px) {
+          // max-width: 100%;
+        }
       }
     }
   }

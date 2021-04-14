@@ -20,35 +20,51 @@ import eldorisExt11 from "../images/eldoris/eldorisExt-11.jpg";
 import eldorisLanding from "../images/eldoris/eldorisLanding.jpg";
 import eldorisMobileLanding from "../images/eldoris/eldorisMobileLanding.jpeg";
 
-import camaronCover from "../images/camaron/camaronCover.jpg";
-import camaronInt1 from "../images/camaron/camaronBed-1.jpg";
-import camaronInt2 from "../images/camaron/camaronBed-2.jpg";
-import camaronInt3 from "../images/camaron/camaronBed-3.jpg";
-import camaronInt4 from "../images/camaron/camaronBed-4.jpg";
-import camaronInt5 from "../images/camaron/camaronBed-5.jpg";
-import camaronInt6 from "../images/camaron/camaronKitchen-1.jpg";
-import camaronInt7 from "../images/camaron/camaronKitchen-2.jpg";
-import camaronInt8 from "../images/camaron/camaronKitchen-3.jpg";
-import camaronInt9 from "../images/camaron/camaronKitchen-4.jpg";
-import camaronInt10 from "../images/camaron/camaronLiving-1.jpg";
-import camaronInt11 from "../images/camaron/camaronLiving-2.jpg";
-import camaronInt12 from "../images/camaron/camaronLiving-3.jpg";
-import camaronInt13 from "../images/camaron/camaronLiving-4.jpg";
-import camaronExt1 from "../images/camaron/camaronExt-1.jpg";
-import camaronExt2 from "../images/camaron/camaronExt-2.jpg";
-import camaronExt3 from "../images/camaron/camaronExt-3.jpg";
-import camaronExt4 from "../images/camaron/camaronExt-4.jpg";
-import camaronExt5 from "../images/camaron/camaronExt-5.jpg";
-import camaronExt6 from "../images/camaron/camaronExt-6.jpg";
-import camaronExt7 from "../images/camaron/camaronExt-7.jpg";
-import camaronExt8 from "../images/camaron/camaronExt-8.jpg";
-import camaronExt9 from "../images/camaron/camaronExt-9.jpg";
-import camaronExt10 from "../images/camaron/camaronExt-10.jpg";
-import camaronExt11 from "../images/camaron/camaronExt-11.jpg";
-import camaronExt12 from "../images/camaron/camaronExt-12.jpg";
-import camaronExt13 from "../images/camaron/camaronExt-13.jpg";
-import camaronExt14 from "../images/camaron/camaronExt-14.jpg";
-import camaronPlan from "../images/camaron/camaronPlan.jpg";
+import camaronCover from "../images/camaron/exterior/exterior3.jpg";
+import camaronInt1 from "../images/camaron/interior/interior1.jpg";
+import camaronInt2 from "../images/camaron/interior/interior2.jpg";
+import camaronInt3 from "../images/camaron/interior/interior3.jpg";
+import camaronInt4 from "../images/camaron/interior/interior4.jpg";
+import camaronInt5 from "../images/camaron/interior/interior5.jpg";
+import camaronInt6 from "../images/camaron/interior/interior6.jpg";
+import camaronInt7 from "../images/camaron/interior/interior7.jpg";
+import camaronInt8 from "../images/camaron/interior/interior8.jpg";
+import camaronInt9 from "../images/camaron/interior/interior9.jpg";
+import camaronInt10 from "../images/camaron/interior/interior10.jpg";
+import camaronInt11 from "../images/camaron/interior/interior11.jpg";
+import camaronInt12 from "../images/camaron/interior/interior12.jpg";
+import camaronInt14 from "../images/camaron/interior/interior14.jpg";
+import camaronInt15 from "../images/camaron/interior/interior15.jpg";
+import camaronInt16 from "../images/camaron/interior/interior16.jpg";
+import camaronInt17 from "../images/camaron/interior/interior17.jpg";
+import camaronInt18 from "../images/camaron/interior/interior18.jpg";
+import camaronInt19 from "../images/camaron/interior/interior19.jpg";
+import camaronInt20 from "../images/camaron/interior/interior20.jpg";
+import camaronInt21 from "../images/camaron/interior/interior21.jpg";
+import camaronInt22 from "../images/camaron/interior/interior22.jpg";
+import camaronInt23 from "../images/camaron/interior/interior23.jpeg";
+import camaronInt24 from "../images/camaron/interior/interior24.jpeg";
+import camaronInt26 from "../images/camaron/interior/interior26.jpeg";
+import camaronInt27 from "../images/camaron/interior/interior27.jpeg";
+import camaronInt28 from "../images/camaron/interior/interior28.jpeg";
+import camaronInt29 from "../images/camaron/interior/interior29.jpeg";
+import camaronInt30 from "../images/camaron/interior/interior30.jpeg";
+import camaronInt31 from "../images/camaron/interior/interior31.jpeg";
+import camaronInt32 from "../images/camaron/interior/interior32.jpeg";
+import camaronInt33 from "../images/camaron/interior/interior33.jpeg";
+import camaronInt34 from "../images/camaron/interior/interior34.jpeg";
+import camaronExt1 from "../images/camaron/exterior/exterior1.jpg";
+import camaronExt2 from "../images/camaron/exterior/exterior2.jpg";
+import camaronExt3 from "../images/camaron/exterior/exterior3.jpg";
+import camaronExt4 from "../images/camaron/exterior/exterior4.jpg";
+import camaronExt5 from "../images/camaron/exterior/exterior5.jpg";
+import camaronExt6 from "../images/camaron/exterior/exterior6.jpg";
+import camaronExt7 from "../images/camaron/exterior/exterior7.jpg";
+import camaronExt8 from "../images/camaron/exterior/exterior8.jpg";
+import camaronExt9 from "../images/camaron/exterior/exterior9.jpg";
+import camaronExt10 from "../images/camaron/exterior/exterior10.jpg";
+import camaronExt11 from "../images/camaron/exterior/exterior11.jpg";
+import camaronExt12 from "../images/camaron/exterior/exterior12.JPG";
 
 import snoopyCover from "../images/snoopy/exterior/snoopyCover.jpeg";
 import snoopyInt1 from "../images/snoopy/interior/interior1.jpg";
@@ -69,36 +85,36 @@ import snoopyExt1 from "../images/snoopy/exterior/exterior1.jpg";
 import snoopyExt2 from "../images/snoopy/exterior/exterior2.jpg";
 import snoopyExt3 from "../images/snoopy/exterior/exterior3.jpg";
 
-import megalodonCover from "../images/megalodon/exterior/megalodonCover.jpg";
-import megalodonInt1 from "../images/megalodon/interior/interior1.jpg";
-import megalodonInt2 from "../images/megalodon/interior/interior2.jpg";
-import megalodonInt3 from "../images/megalodon/interior/interior3.jpg";
-import megalodonInt4 from "../images/megalodon/interior/interior4.jpg";
-import megalodonInt5 from "../images/megalodon/interior/interior5.jpg";
-import megalodonInt6 from "../images/megalodon/interior/interior6.jpg";
-import megalodonInt7 from "../images/megalodon/interior/interior7.jpg";
-import megalodonInt8 from "../images/megalodon/interior/interior8.jpg";
-import megalodonInt9 from "../images/megalodon/interior/interior9.jpg";
-import megalodonInt10 from "../images/megalodon/interior/interior10.jpg";
-import megalodonInt11 from "../images/megalodon/interior/interior11.jpg";
-import megalodonInt12 from "../images/megalodon/interior/interior12.jpg";
-import megalodonInt13 from "../images/megalodon/interior/interior13.jpg";
-import megalodonInt14 from "../images/megalodon/interior/interior14.jpg";
-import megalodonInt15 from "../images/megalodon/interior/interior15.jpg";
-import megalodonInt16 from "../images/megalodon/interior/interior16.jpg";
-import megalodonInt17 from "../images/megalodon/interior/interior17.jpg";
-import megalodonInt18 from "../images/megalodon/interior/interior18.jpg";
-import megalodonInt19 from "../images/megalodon/interior/interior19.jpg";
+import megalodonCover from "../images/megalodon/exterior/exterior6.jpeg";
+import megalodonInt1 from "../images/megalodon/interior/interior1.jpeg";
+import megalodonInt2 from "../images/megalodon/interior/interior2.jpeg";
+import megalodonInt3 from "../images/megalodon/interior/interior3.jpeg";
+import megalodonInt4 from "../images/megalodon/interior/interior4.jpeg";
+import megalodonInt5 from "../images/megalodon/interior/interior5.jpeg";
+import megalodonInt6 from "../images/megalodon/interior/interior6.jpeg";
+import megalodonInt7 from "../images/megalodon/interior/interior7.jpeg";
+import megalodonInt8 from "../images/megalodon/interior/interior8.jpeg";
+import megalodonInt9 from "../images/megalodon/interior/interior9.jpeg";
+import megalodonInt10 from "../images/megalodon/interior/interior10.jpeg";
+import megalodonInt11 from "../images/megalodon/interior/interior11.jpeg";
+import megalodonInt12 from "../images/megalodon/interior/interior12.jpeg";
+import megalodonInt13 from "../images/megalodon/interior/interior13.jpeg";
+import megalodonInt14 from "../images/megalodon/interior/interior14.jpeg";
+import megalodonInt15 from "../images/megalodon/interior/interior15.jpeg";
+import megalodonInt16 from "../images/megalodon/interior/interior16.jpeg";
+import megalodonInt17 from "../images/megalodon/interior/interior17.jpeg";
+import megalodonInt18 from "../images/megalodon/interior/interior18.jpeg";
+import megalodonInt19 from "../images/megalodon/interior/interior19.jpeg";
+import megalodonInt20 from "../images/megalodon/interior/interior20.jpeg";
 import megalodonExt1 from "../images/megalodon/exterior/exterior1.jpg";
 import megalodonExt2 from "../images/megalodon/exterior/exterior2.jpg";
 import megalodonExt3 from "../images/megalodon/exterior/exterior3.jpg";
 import megalodonExt4 from "../images/megalodon/exterior/exterior4.jpg";
 import megalodonExt5 from "../images/megalodon/exterior/exterior5.jpg";
-import megalodonExt6 from "../images/megalodon/exterior/exterior6.jpg";
-import megalodonExt7 from "../images/megalodon/exterior/exterior7.jpg";
-import megalodonExt8 from "../images/megalodon/exterior/exterior8.jpg";
-import megalodonExt9 from "../images/megalodon/exterior/exterior9.jpg";
-import megalodonExt10 from "../images/megalodon/exterior/exterior10.jpg";
+import megalodonExt6 from "../images/megalodon/exterior/exterior6.jpeg";
+import megalodonExt7 from "../images/megalodon/exterior/exterior7.jpeg";
+import megalodonExt8 from "../images/megalodon/exterior/exterior8.jpeg";
+import megalodonExt9 from "../images/megalodon/exterior/exterior9.jpeg";
 
 export const fleet = [
   //eldoris
@@ -109,8 +125,8 @@ export const fleet = [
       title: "ELDORIS",
       subTitle: "2011 Bavaria 45 Cruiser",
       paragraph:
-        "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Eldoris was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+        "Comfort and Performance; the complete sailing superyacht experience",
+      description: `Eldoris was built by Bavaria, an established German brand know for its durability and exquisite design. With Eldoris, you'll enjoy the Mediterrenean and Aegen bays to the fullest with a combination of optimum performance and comfort. With its spacious interior, wide kitchen, and large resting and sunbathing areas the Bavaria 45 Cruiser will give you very comfortable holiday experience.`,
       specs: {
         capacity: "3 cabins",
         motor: "75HP Volvo",
@@ -159,7 +175,7 @@ export const fleet = [
       subTitle: "2011 Bavaria 45 Cruiser",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Eldoris was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Alman markası Bavaria tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Bavaria 45 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "3 kabin",
         motor: "75HP Volvo",
@@ -334,7 +350,6 @@ export const fleet = [
     landingImage: eldorisLanding,
     images: {
       interior: [
-        camaronPlan,
         camaronInt1,
         camaronInt2,
         camaronInt3,
@@ -347,7 +362,26 @@ export const fleet = [
         camaronInt10,
         camaronInt11,
         camaronInt12,
-        camaronInt13,
+        camaronInt14,
+        camaronInt15,
+        camaronInt16,
+        camaronInt17,
+        camaronInt18,
+        camaronInt19,
+        camaronInt20,
+        camaronInt21,
+        camaronInt22,
+        camaronInt23,
+        camaronInt24,
+        camaronInt26,
+        camaronInt27,
+        camaronInt28,
+        camaronInt29,
+        camaronInt30,
+        camaronInt31,
+        camaronInt32,
+        camaronInt33,
+        camaronInt34,
       ],
       exterior: [
         camaronExt1,
@@ -362,8 +396,6 @@ export const fleet = [
         camaronExt10,
         camaronExt11,
         camaronExt12,
-        camaronExt13,
-        camaronExt14,
       ],
     },
   },
@@ -612,6 +644,7 @@ export const fleet = [
         megalodonInt17,
         megalodonInt18,
         megalodonInt19,
+        megalodonInt20,
       ],
       exterior: [
         megalodonExt1,
@@ -623,7 +656,6 @@ export const fleet = [
         megalodonExt7,
         megalodonExt8,
         megalodonExt9,
-        megalodonExt10,
       ],
     },
   },

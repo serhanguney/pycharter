@@ -30,7 +30,12 @@ export default function useSlider() {
 
   function nextSlide(limit, ref) {
     dispatch({ type: "increment", payload: limit });
-    const width = ref.getBoundingClientRect().width;
+
+    const nodeStyle = window.getComputedStyle(ref);
+    const margin = nodeStyle.getPropertyValue("margin-right");
+    const marginValue = +margin.replace(/[a-z]/g, "") * 2;
+    console.log("margin", marginValue);
+    const width = ref.getBoundingClientRect().width + marginValue;
     const previousValue = slideMotionValue.get();
     animate(slideMotionValue, previousValue - width, motionTransition);
   }
