@@ -254,7 +254,7 @@ export const fleet = [
       subTitle: "2014 Lagoon 620",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Twilight was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Camaron was built by Lagoon, an established French brand know for its durability and exquisite design. With Camaron, you'll enjoy the Mediterrenean and Aegen bays to the fullest with a combination of optimum performance and comfort. With its spacious interior, wide kitchen, and large resting and sunbathing areas the Lagoon 620 Cruiser will give you very comfortable holiday experience.`,
       specs: {
         capacity: "4 cabins",
         motor: "75HP x2",
@@ -303,7 +303,7 @@ export const fleet = [
       subTitle: "2014 Lagoon 620",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Twilight was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Fransız markası Lagoon tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Lagoon 620 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "4 kabin",
         motor: "75HP x2",
@@ -407,7 +407,7 @@ export const fleet = [
       subTitle: "2014 Lagoon 520",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Twilight was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Snoopy was built by Lagoon, an established French brand know for its durability and exquisite design. With Snoopy, you'll enjoy the Mediterrenean and Aegen bays to the fullest with a combination of optimum performance and comfort. With its spacious interior, wide kitchen, and large resting and sunbathing areas the Lagoon 520 Cruiser will give you very comfortable holiday experience.`,
       specs: {
         capacity: "4 cabins",
         motor: "54HP x2 Yanmar",
@@ -456,7 +456,7 @@ export const fleet = [
       subTitle: "2014 Lagoon 520",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Twilight was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Fransız markası Lagoon tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Lagoon 620 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "4 kabin",
         motor: "54HP x2 Yanmar",
@@ -529,7 +529,7 @@ export const fleet = [
       subTitle: "2011 Lagoon 450",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Twilight was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Megalodon was built by Lagoon, an established French brand know for its durability and exquisite design. With Megalodon, you'll enjoy the Mediterrenean and Aegen bays to the fullest with a combination of optimum performance and comfort. With its spacious interior, wide kitchen, and large resting and sunbathing areas the Lagoon 450 Cruiser will give you very comfortable holiday experience.`,
       specs: {
         capacity: "3 cabins",
         motor: "40HP x2 Yanmar",
@@ -578,7 +578,7 @@ export const fleet = [
       subTitle: "2011 Lagoon 450",
       paragraph:
         "Fast and luxurios; the complete sailing superyacht experience",
-      description: `Twilight was designed with two specific design requests from an experienced owner who has built more than a thousand yachts: make it fast and comfortable. Designed by Ed Dubios, this yacht has certainly exceeded the brief in this luxurious and powerful high-performance sailing superyacht.`,
+      description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Fransız markası Lagoon tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Lagoon 620 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "3 kabin",
         motor: "40HP x2 Yanmar",

@@ -4,13 +4,7 @@ import { animate, useMotionValue, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function SubPanel() {
-  const features = [
-    "Description",
-    "Features",
-    "Exterior",
-    "Reviews",
-    "Interior",
-  ];
+  const features = ["Description", "Features", "Exterior", "Interior"];
   const [sticky, setSticky] = useState(false);
   const { dimensions } = useContext(Portfolio);
   const subPanel = useRef(null);

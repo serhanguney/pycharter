@@ -139,7 +139,7 @@ export default function Yacht() {
         </span>
         <Slider images={images.exterior} />
       </section>
-      <Reviews />
+      {/* <Reviews /> */}
       <section id="interior" className="grid">
         <span className="title">
           <h1>{content[portfolio.language].yacht.interior}</h1>
