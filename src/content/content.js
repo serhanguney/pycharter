@@ -49,8 +49,9 @@ export const content = {
   tur: {
     homepage: {
       description: {
-        title: "Rasgele!",
-        paragraph: "Evet efendim",
+        title: "Ahoy!",
+        paragraph:
+          "Sizde karada yeterince vakit geçirdim artık denizde olmak istiyorum diyorsanız, kendinizi maviliklerin içinde masalsı bir yolculukta bulmaya hazırlanın.",
       },
       buttons: {
         primary: "Botlara git",
@@ -70,21 +71,21 @@ export const content = {
     },
     yacht: {
       buttons: {
-        secondary: "Request callback",
-        primary: "View Gallery",
+        secondary: "Iletisime gec",
+        primary: "Galeriye git",
       },
-      exterior: "Exterior",
-      interior: "Interior",
+      exterior: "Dis gorunum",
+      interior: "Ic gorunum",
       others: {
-        title: "Other Boats",
-        button: "View this boat ",
+        title: "Diger Yatlar",
+        button: "Yat sayfasina git",
       },
       cta: {
-        title: "Like what you see?",
-        button: "Make an inquiry",
+        title: "Begendiniz mi?",
+        button: "Iletisime gec",
       },
       reviews: {
-        title: "Reviews",
+        title: "Yorumlar",
         paragraph:
           "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
         author: "Serhan Guney , 2020",

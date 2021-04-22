@@ -188,18 +188,11 @@ export default function Navbar() {
           </div>
           <div className="media__icons">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/privateyachtingturkey/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Instagram />
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Facebook />
             </a>
           </div>
         </>

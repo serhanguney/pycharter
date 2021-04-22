@@ -15,6 +15,16 @@
     width: 40px;
     border: 1px solid $main-color;
     border-radius: 20px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    img {
+      height: 40%;
+    }
+    @media screen and(max-width: 1200px) {
+      display: none;
+    }
     &:nth-of-type(1) {
       grid-column: 1/2;
     }

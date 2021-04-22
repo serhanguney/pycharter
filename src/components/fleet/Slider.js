@@ -1,9 +1,9 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef, memo } from "react";
 import arrowLeft from "../../icons/sliderArrowLeft.svg";
 import arrowRight from "../../icons/sliderArrowRight.svg";
 import { useHistory } from "react-router-dom";
 
-export default function Slider({ images }) {
+function Slider({ images }) {
   const history = useHistory();
   let gallery = useRef(null);
   let x = useRef(0);
@@ -32,16 +32,19 @@ export default function Slider({ images }) {
       widthArray.current = Array.from(gallery.children).map(
         (el) => el.getBoundingClientRect().width
       );
+      gallery.scroll({ top: 0, left: 0 });
     }, 500);
 
     gallery.addEventListener("scroll", trackScroll);
-    history.listen(() => gallery.removeEventListener("scroll", trackScroll));
+    return () => {
+      gallery.removeEventListener("scroll", trackScroll);
+    };
   }, []);
 
   return (
     <div className="slider grid">
       <button
-        value={1}
+        value={-1}
         onClick={(e) => handleScroll(e)}
         className="slider__button"
       >
@@ -55,7 +58,7 @@ export default function Slider({ images }) {
         ))}
       </div>
       <button
-        value={-1}
+        value={1}
         onClick={(e) => handleScroll(e)}
         className="slider__button"
       >
@@ -64,3 +67,5 @@ export default function Slider({ images }) {
     </div>
   );
 }
+
+export default memo(Slider);

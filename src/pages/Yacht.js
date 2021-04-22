@@ -16,6 +16,7 @@ import Overlay from "../components/Overlay";
 import mobileLanding from "../images/mobileYachtLanding.jpg";
 import desktopLanding from "../images/aboutCover.jpg";
 import { content } from "../content/content";
+import Footer from "../components/Footer";
 
 export default function Yacht() {
   const {
@@ -88,9 +89,9 @@ export default function Yacht() {
                   {content[portfolio.language].yacht.buttons.secondary}
                 </Link>
               </button>
-              <button className="primary-button">
+              {/* <button className="primary-button">
                 {content[portfolio.language].yacht.buttons.primary}
-              </button>
+              </button> */}
             </div>
           </Reveal>
         </div>
@@ -147,7 +148,7 @@ export default function Yacht() {
       </section>
       <CallToAction />
       <OtherBoats />
-      <footer className="grid"></footer>
+      <Footer />
     </motion.main>
   );
 }

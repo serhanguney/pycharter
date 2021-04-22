@@ -104,6 +104,7 @@ function App() {
             </AnimatePresence>
           )}
         />
+        {/* <Footer /> */}
       </Portfolio.Provider>
     </>
   );
