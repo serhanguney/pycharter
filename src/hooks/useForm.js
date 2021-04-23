@@ -29,7 +29,7 @@ export default function useForm(validate) {
   useEffect(() => {
     const submit = async () => {
       try {
-        const result = await axios.post(
+        await axios.post(
           "https://pacific-stream-49427.herokuapp.com/contact",
           values
         );

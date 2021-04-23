@@ -35,6 +35,9 @@ export default function About() {
         <Reveal delay={0.5}>
           <p>{content[portfolio.language].about.paragraph3}</p>
         </Reveal>
+        <Reveal delay={0.5}>
+          <p>{content[portfolio.language].about.paragraph4}</p>
+        </Reveal>
       </section>
       <section className="visual-content"></section>
     </motion.main>

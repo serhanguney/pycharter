@@ -3,7 +3,7 @@
   justify-content: center;
   margin: 40px 0 20px 0;
   grid-row: 2/3;
-  grid-column: 6/8;
+  grid-column: 1/-1;
   @media screen and(max-width: 620px) {
     grid-column: 1/-1;
   }
@@ -14,6 +14,10 @@
     border-radius: 5px;
     border: 1px solid $main-color;
     margin: 0 5px;
-    font-size: 30px;
+    @media screen and(max-width: 620px) {
+      width: 6px;
+      height: 6px;
+      margin: 0 2px;
+    }
   }
 }

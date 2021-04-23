@@ -52,15 +52,12 @@ function App() {
   }, [dimensions]);
   useEffect(() => {
     const debouncedHandleResize = debounce(function handleResize() {
-      //mobile browser bottom bar triggers resize event on scroll. Prevent this with the following
+      //mobile browser bottom bar triggers resize event on scroll. Prevent this with setting the max value all the time.
       //preventing mobile bugs
-      if (
-        dimensions.width < 620 &&
-        dimensions.height * 0.8 > window.innerHeight
-      ) {
+      if (dimensions.width < 620) {
         setDimensions({
           width: window.innerWidth,
-          height: window.innerHeight,
+          height: Math.max(window.innerHeight, dimensions.height),
         });
       }
       if (dimensions.width > 620) {
@@ -107,6 +104,7 @@ function App() {
             </AnimatePresence>
           )}
         />
+        {/* <Footer /> */}
       </Portfolio.Provider>
     </>
   );
