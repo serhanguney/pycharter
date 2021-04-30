@@ -29,9 +29,7 @@ export default function Contact() {
         <Form />
       </div>
       <div className="visual-content">
-        <div className="image-container">
-          {/* <img src={contactImage} alt="contact" /> */}
-        </div>
+        <div className="image-container"></div>
       </div>
     </motion.main>
   );
