@@ -2,11 +2,15 @@ import React, { useEffect, useRef, useState, useContext } from "react";
 import { Portfolio } from "../../context";
 import { animate, useMotionValue, motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { content } from "../../content/content";
 
 export default function SubPanel() {
-  const features = ["Description", "Features", "Exterior", "Interior"];
+  const features = {
+    en: ["Description", "Features", "Exterior", "Interior"],
+    tur: ["Açıklama", "Özellikler", "Dış görünüm", "Iç görünüm"],
+  };
   const [sticky, setSticky] = useState(false);
-  const { dimensions } = useContext(Portfolio);
+  const { portfolio, dimensions } = useContext(Portfolio);
   const subPanel = useRef(null);
   let panelHeight = useRef(0);
   let unsubscribe = useRef(null);
@@ -65,7 +69,7 @@ export default function SubPanel() {
   return (
     <div className={`sub-panel ${sticky ? "sticky" : ""}`} ref={subPanel}>
       <ul>
-        {features.map((item, index) => (
+        {features[portfolio.language].map((item, index) => (
           <li key={index}>
             <a
               name={item.toLowerCase()}
@@ -85,7 +89,9 @@ export default function SubPanel() {
           variants={buttonVariants}
           className="secondary-button"
         >
-          <Link to="/contact">Make an inquiry</Link>
+          <Link to="/contact">
+            {content[portfolio.language].yacht.cta.button}
+          </Link>
         </motion.button>
       )}
     </div>

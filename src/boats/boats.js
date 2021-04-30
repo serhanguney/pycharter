@@ -173,8 +173,7 @@ export const fleet = [
       name: "Eldoris",
       title: "ELDORIS",
       subTitle: "2011 Bavaria 45 Cruiser",
-      paragraph:
-        "Fast and luxurios; the complete sailing superyacht experience",
+      paragraph: "Hızlı ve lüks mükemmel bir tekne keyfi için",
       description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Alman markası Bavaria tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Bavaria 45 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "3 kabin",
@@ -301,8 +300,7 @@ export const fleet = [
       name: "Camaron",
       title: "CAMARON",
       subTitle: "2014 Lagoon 620",
-      paragraph:
-        "Fast and luxurios; the complete sailing superyacht experience",
+      paragraph: "Hızlı ve lüks mükemmel bir tekne keyfi için",
       description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Fransız markası Lagoon tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Lagoon 620 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "4 kabin",
@@ -454,8 +452,7 @@ export const fleet = [
       name: "Snoopy",
       title: "SNOOPY",
       subTitle: "2014 Lagoon 520",
-      paragraph:
-        "Fast and luxurios; the complete sailing superyacht experience",
+      paragraph: "Hızlı ve lüks mükemmel bir tekne keyfi için",
       description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Fransız markası Lagoon tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Lagoon 620 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "4 kabin",
@@ -576,8 +573,7 @@ export const fleet = [
       name: "Megalodon",
       title: "MEGALODON",
       subTitle: "2011 Lagoon 450",
-      paragraph:
-        "Fast and luxurios; the complete sailing superyacht experience",
+      paragraph: "Hızlı ve lüks mükemmel bir tekne keyfi için",
       description: `Sağlamlığı ve üstün tasarımı sayesinde kendini ispatlamış Fransız markası Lagoon tarafından üretilmiştir. Konfor ve performansın bir arada buluştuğu bu yelkenli tekne ile Ege ve Akdeniz sularında yelken yapmanın yanı sıra, muhteşem koyların tadına varacaksınız. Geniş mutfağında yemeklerizi hazırlarken, ferah ve aydınlık iç mekan kullanımı sunan Lagoon 620 Cruiser, açılabilen arka platformu sayesinde de size ekstra geniş dinlenme ve güneşlenme alanları yaratarak tatilinizi daha konforlu hale getirecektir.`,
       specs: {
         capacity: "3 kabin",

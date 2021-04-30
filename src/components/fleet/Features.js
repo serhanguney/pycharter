@@ -1,12 +1,13 @@
 import React, { useContext, useEffect, useRef } from "react";
-import { Portfolio } from "../../context";
+import { Portfolio, portfolioObject } from "../../context";
 import useSlider from "../../hooks/useSlider";
 import useArray from "../../hooks/useArray";
 import { motion } from "framer-motion";
 import Pagination from "./Pagination";
+import { content } from "../../content/content";
 
 export default function Features({ features }) {
-  const { dimensions } = useContext(Portfolio);
+  const { portfolio, dimensions } = useContext(Portfolio);
   const { slide, nextSlide, previousSlide, slideMotionValue } = useSlider();
   let gallery = useRef(null);
 
@@ -25,7 +26,7 @@ export default function Features({ features }) {
   }
   return (
     <section id="features">
-      <h1>Features</h1>
+      <h1>{content[portfolio.language].yacht.features}</h1>
 
       <div className="features-content">
         <button name="previous" onClick={(e) => handleClick(e)}>

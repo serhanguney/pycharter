@@ -1,6 +1,11 @@
 export const content = {
   en: {
-    navbar: {},
+    navbar: [
+      { link: "/", name: "Home" },
+      { link: "/about", name: "About" },
+      { link: "/fleet", name: "Fleet" },
+      { link: "/contact", name: "Contact" },
+    ],
     homepage: {
       description: {
         title: "Ahoy",
@@ -23,11 +28,20 @@ export const content = {
       paragraph4:
         "You decide when, and we'll handle the rest for you. Don't settle for on fourth, expand your life...",
     },
+    fleet: {
+      title: "Fleet",
+      p1:
+        "We are happy to present you our variety of options, whether you would like a bareboat yacht or one with a captain, a catamaran or a sailboat, a luxurios gulet or a motorboat, you can find any option thats suitable for you with us.",
+      p2:
+        "You decide when, and we'll handle the rest for you. Don't settle for on fourth, expand your life...",
+      b1: "View this boat ",
+    },
     yacht: {
       buttons: {
         secondary: "Request callback",
         primary: "View Gallery",
       },
+      features: "Features",
       exterior: "Exterior",
       interior: "Interior",
       others: {
@@ -47,6 +61,12 @@ export const content = {
     },
   },
   tur: {
+    navbar: [
+      { link: "/", name: "Anasayfa" },
+      { link: "/about", name: "Hakkımızda" },
+      { link: "/fleet", name: "Tekneler" },
+      { link: "/contact", name: "Iletişim" },
+    ],
     homepage: {
       description: {
         title: "Ahoy!",
@@ -69,20 +89,29 @@ export const content = {
       paragraph4:
         "Siz zamanı belirleyin biz ise geri kalanını. Yaşam alanınızı genişletin, dörtte biri ile yetinmeyin...",
     },
+    fleet: {
+      title: "Tekneler",
+      p1:
+        "Tekne seçiminiz ne olursa olsun; bareboat ya da kaptanlı, yelkenli ya da katamaran, lüks bir gulet ya da motoryata kadar her seçeneği sizlere sunmaktan mutluluk duyarız.",
+      p2:
+        "Siz zamanı belirleyin biz ise geri kalanını. Yaşam alanınızı genişletin, dörtte biri ile yetinmeyin...",
+      b1: "Tekneye git ",
+    },
     yacht: {
       buttons: {
-        secondary: "Iletisime gec",
+        secondary: "Iletişime gec",
         primary: "Galeriye git",
       },
-      exterior: "Dis gorunum",
-      interior: "Ic gorunum",
+      features: "Özellikler",
+      exterior: "Dış görünüm",
+      interior: "Iç görünüm",
       others: {
         title: "Diger Yatlar",
-        button: "Yat sayfasina git",
+        button: "Yat sayfasına git",
       },
       cta: {
         title: "Begendiniz mi?",
-        button: "Iletisime gec",
+        button: "Iletişime geç",
       },
       reviews: {
         title: "Yorumlar",
