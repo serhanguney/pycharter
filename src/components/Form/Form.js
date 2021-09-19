@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useForm from "../../hooks/useForm";
 import validate from "../Form/validate";
@@ -6,9 +6,15 @@ import Dropdown from "./Dropdown";
 import required from "../../icons/required.svg";
 import lottie from "lottie-web";
 import data from "../../images/confetti.json";
+import { content } from "../../content/content";
+import { Portfolio } from "../../context";
 
 export default function Form() {
   let container = useRef(null);
+  const {
+    portfolio: { language },
+  } = useContext(Portfolio);
+  console.log(language);
   const {
     handleChange,
     handleSubmit,
@@ -36,17 +42,19 @@ export default function Form() {
   return submitted ? (
     <>
       <div ref={(el) => (container = el)} className="submitted__form">
-        <h2>Your message is received!</h2>
-        <p>A member of our team will be getting in touch with you very soon.</p>
+        <h2>{content[language].contact.success.h1}</h2>
+        <p>{content[language].contact.success.p}</p>
         <Link to="/">
-          <button className="primary-button">Go to homepage</button>
+          <button className="primary-button">
+            {content[language].contact.success.button}
+          </button>
         </Link>
       </div>
     </>
   ) : (
     <form>
       <div className="form-element">
-        <label htmlFor="fullName">Your Name</label>
+        <label htmlFor="fullName">{content[language].contact.fill.name}</label>
         <input
           type="text"
           id="fullName"
@@ -64,7 +72,7 @@ export default function Form() {
         />
       </div>
       <div className="form-element">
-        <label htmlFor="mobile">Your Mobile</label>
+        <label htmlFor="mobile">{content[language].contact.fill.phone}</label>
         <input
           type="number"
           id="mobile"
@@ -74,7 +82,7 @@ export default function Form() {
         />
       </div>
       <div className="form-element">
-        <label htmlFor="from">Your Email</label>
+        <label htmlFor="from">{content[language].contact.fill.email}</label>
         <input
           type="email"
           id="from"
@@ -97,7 +105,9 @@ export default function Form() {
         />
       </div>
       <div className="form-message">
-        <label htmlFor="message">Your Message</label>
+        <label htmlFor="message">
+          {content[language].contact.fill.message}
+        </label>
         <textarea
           name="message"
           id="message"
@@ -109,7 +119,7 @@ export default function Form() {
         <div className="checkbox">
           <input type="checkbox" id="checkbox" disabled={isSubmitting} />
           <label htmlFor="checkbox">
-            Legal consent text goes here, this is the selected state
+            {content[language].contact.fill.legal}
           </label>
         </div>
         <button
@@ -118,7 +128,9 @@ export default function Form() {
           style={{ pointerEvents: `${submitted ? "none" : "auto"}` }}
           onClick={(e) => handleSubmit(e)}
         >
-          {isSubmitting ? "Submit in process. Please wait..." : "Submit"}
+          {isSubmitting
+            ? content[language].contact.button.loading
+            : content[language].contact.button.send}
         </button>
       </div>
     </form>

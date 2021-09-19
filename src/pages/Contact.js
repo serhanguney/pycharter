@@ -5,13 +5,14 @@ import Form from "../components/Form/Form";
 import { motion } from "framer-motion";
 import { Portfolio } from "../context";
 import Overlay from "../components/Overlay";
+import { content } from "../content/content";
 
 export default function Contact() {
   const {
     motionMenu,
     loadPage,
     pageTransition,
-    portfolio: { ease },
+    portfolio: { ease, language },
   } = useContext(Portfolio);
 
   useEffect(() => pageTransition(), []);
@@ -24,7 +25,7 @@ export default function Contact() {
       )}
       <div className="text-content">
         <Reveal delay={0.2}>
-          <h2>Contact</h2>
+          <h2>{content[language].contact.title}</h2>
         </Reveal>
         <Form />
       </div>

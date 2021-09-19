@@ -4,6 +4,7 @@ import required from "../../icons/required.svg";
 import { motion } from "framer-motion";
 import dropdownArrow from "../../icons/dropdownArrow.svg";
 import { Portfolio } from "../../context";
+import { content } from "../../content/content";
 export default function Dropdown({ state }) {
   const { portfolio } = useContext(Portfolio);
   const [open, setOpen] = useState(false);
@@ -21,7 +22,9 @@ export default function Dropdown({ state }) {
   };
   return (
     <>
-      <label htmlFor="boat">Boat Interested</label>
+      <label htmlFor="boat">
+        {content[portfolio.language].dropdown.placeholder}
+      </label>
 
       <input
         type="button"

@@ -30,10 +30,8 @@ export const content = {
     },
     fleet: {
       title: "Fleet",
-      p1:
-        "We are happy to present you our variety of options, whether you would like a bareboat yacht or one with a captain, a catamaran or a sailboat, a luxurios gulet or a motorboat, you can find any option thats suitable for you with us.",
-      p2:
-        "You decide when, and we'll handle the rest for you. Don't settle for on fourth, expand your life...",
+      p1: "We are happy to present you our variety of options, whether you would like a bareboat yacht or one with a captain, a catamaran or a sailboat, a luxurios gulet or a motorboat, you can find any option thats suitable for you with us.",
+      p2: "You decide when, and we'll handle the rest for you. Don't settle for on fourth, expand your life...",
       b1: "View this boat ",
     },
     yacht: {
@@ -52,12 +50,25 @@ export const content = {
         title: "Like what you see?",
         button: "Make an inquiry",
       },
-      reviews: {
-        title: "Reviews",
-        paragraph:
-          "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-        author: "Serhan Guney , 2020",
+    },
+    contact: {
+      title: "Contact",
+      fill: {
+        name: "Your Name",
+        phone: "Your Phone",
+        email: "Your Email",
+        message: "Your Message",
+        legal: "I agree to share my personal contact information",
       },
+      success: {
+        h1: "Your message is received!",
+        p: "A member of our team will be getting in touch with you very soon.",
+        button: "Go to homepage",
+      },
+      button: { send: "Submit", loading: "Submit in process. Please wait..." },
+    },
+    dropdown: {
+      placeholder: "Boat Interested",
     },
   },
   tur: {
@@ -91,10 +102,8 @@ export const content = {
     },
     fleet: {
       title: "Tekneler",
-      p1:
-        "Tekne seçiminiz ne olursa olsun; bareboat ya da kaptanlı, yelkenli ya da katamaran, lüks bir gulet ya da motoryata kadar her seçeneği sizlere sunmaktan mutluluk duyarız.",
-      p2:
-        "Siz zamanı belirleyin biz ise geri kalanını. Yaşam alanınızı genişletin, dörtte biri ile yetinmeyin...",
+      p1: "Tekne seçiminiz ne olursa olsun; bareboat ya da kaptanlı, yelkenli ya da katamaran, lüks bir gulet ya da motoryata kadar her seçeneği sizlere sunmaktan mutluluk duyarız.",
+      p2: "Siz zamanı belirleyin biz ise geri kalanını. Yaşam alanınızı genişletin, dörtte biri ile yetinmeyin...",
       b1: "Tekneye git ",
     },
     yacht: {
@@ -113,12 +122,25 @@ export const content = {
         title: "Begendiniz mi?",
         button: "Iletişime geç",
       },
-      reviews: {
-        title: "Yorumlar",
-        paragraph:
-          "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available.",
-        author: "Serhan Guney , 2020",
+    },
+    contact: {
+      title: "Iletişim",
+      fill: {
+        name: "Adınız",
+        phone: "Telefon numaranız",
+        email: "Email adresiniz",
+        message: "Mesajınız",
+        legal: "Kisisel iletişim bilgilerimi kendi isteğimle paylaşıyorum",
       },
+      success: {
+        h1: "Mesajiniz bize ulaşmıştır.",
+        p: "Ekibimiz sizinle en kısa zamanda iletişime geçecektir.",
+        button: "Anasayfaya git",
+      },
+      button: { send: "Gönder", loading: "Lütfen bekleyin..." },
+    },
+    dropdown: {
+      placeholder: "Tekne Seçiminiz",
     },
   },
 };
