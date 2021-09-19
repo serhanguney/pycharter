@@ -50,7 +50,7 @@
       grid-column: span 1;
       border-radius: 8px;
       transform: translateZ(0); //for border radius bug on mobile
-      height: 300px;
+      min-height: 300px;
       @media screen and(max-width: 1200px) {
         grid-column: span 2;
       }
