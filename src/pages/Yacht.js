@@ -30,14 +30,8 @@ export default function Yacht() {
   const activeBoat = fleet.find(
     (item) => item[portfolio.language].name.toLowerCase() === boat
   );
-  const {
-    title,
-    subTitle,
-    paragraph,
-    description,
-    specs,
-    features,
-  } = activeBoat[portfolio.language];
+  const { title, subTitle, paragraph, description, specs, features } =
+    activeBoat[portfolio.language];
   const { coverImage, images } = activeBoat;
 
   useEffect(() => {
@@ -89,9 +83,6 @@ export default function Yacht() {
                   {content[portfolio.language].yacht.buttons.secondary}
                 </Link>
               </button>
-              {/* <button className="primary-button">
-                {content[portfolio.language].yacht.buttons.primary}
-              </button> */}
             </div>
           </Reveal>
         </div>
@@ -139,7 +130,6 @@ export default function Yacht() {
         </span>
         <Slider images={images.exterior} />
       </section>
-      {/* <Reviews /> */}
       <section id="interior" className="grid">
         <span className="title">
           <h1>{content[portfolio.language].yacht.interior}</h1>

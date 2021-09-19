@@ -12,6 +12,14 @@
   button {
     width: 15%;
     margin: 20px 0 30px 0;
+    a {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
+    }
     @media screen and(max-width: 1200px) {
       width: 20%;
     }
