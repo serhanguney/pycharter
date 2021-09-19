@@ -6,7 +6,7 @@ export default function Language() {
 
   function handleLanguage(e) {
     const language = e.target.getAttribute("value");
-    setPortfolio({ ...portfolio, language: language });
+    setPortfolio((prev) => ({ ...prev, language: language, menuOpen: false }));
   }
   return (
     <div id="language">

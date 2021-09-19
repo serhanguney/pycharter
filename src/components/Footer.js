@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
 import Instagram from "../icons/instagram";
-import Facebook from "../icons/facebook";
+import { content } from "../content/content";
 
 export default function Footer() {
   const {
@@ -21,9 +21,9 @@ export default function Footer() {
     <footer>
       <h2>{width < 620 ? "PYC" : "Private Yacht Charter"}</h2>
       <div className="page__links">
-        <Link to="/about">About</Link>
-        <Link to="/fleet">Fleet</Link>
-        <Link to="/contact">Contact</Link>
+        {content[portfolio.language].navbar.map((item) => (
+          <Link to={item.link}>{item.name}</Link>
+        ))}
       </div>
       <div className="media__links">
         <p value="tur" onClick={(e) => handleLanguage(e)}>

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Portfolio } from "../context";
 import { animate, motion } from "framer-motion";
 import Instagram from "../icons/instagram.js";
-import Facebook from "../icons/facebook.js";
+import { content } from "../content/content";
 
 export default function Navbar() {
   const {
@@ -180,10 +180,9 @@ export default function Navbar() {
           <h2>{width < 960 ? "PYC" : "Private Yacht Charter"}</h2>
 
           <div className="navigation">
-            <Link to="/">Home</Link>
-            <Link to="/fleet">Fleet</Link>
-            <Link to="/about">About</Link>
-            <Link to="/contact">Contact</Link>
+            {content[portfolio.language].navbar.map((item) => (
+              <Link to={item.link}>{item.name}</Link>
+            ))}
             <Language />
           </div>
           <div className="media__icons">

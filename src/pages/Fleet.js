@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useHistory } from "react-router-dom";
 import { Portfolio } from "../context";
 import Overlay from "../components/Overlay";
+import { content } from "../content/content";
 
 export default function Fleet() {
   const {
@@ -78,21 +79,13 @@ export default function Fleet() {
       )}
       <section className="text-content">
         <Reveal delay={0.3}>
-          <h2>Fleet</h2>
+          <h2>{content[portfolio.language].fleet.title}</h2>
         </Reveal>
         <Reveal delay={0.3}>
-          <p>
-            A unique blue cruise experience on the magnificent bays and Greek
-            islands of the Aegean and Mediterranean Sea
-          </p>
+          <p>{content[portfolio.language].fleet.p1}</p>
         </Reveal>
         <Reveal delay={0.3}>
-          <p>
-            A unique blue cruise experience on the magnificent bays and Greek
-            islands of the Aegean and Mediterranean Sea a unique blue cruise
-            experience on the magnificent bays and Greek islands of the Aegean
-            and Mediterranean Sea
-          </p>
+          <p>{content[portfolio.language].fleet.p2}</p>
         </Reveal>
       </section>
       <section className="visual-content">
@@ -128,7 +121,7 @@ export default function Fleet() {
                   variants={hoverVariants.text}
                   custom={1}
                 >
-                  View this boat{" "}
+                  {content[portfolio.language].fleet.b1}
                   <span>
                     <img src={rightArrow} alt="rightArrow" />
                   </span>
