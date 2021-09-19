@@ -16,7 +16,7 @@ export default function useForm(validate) {
     setValues({ ...values, [e.target.name]: e.target.value });
   }
 
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setErrors(validate(values));
     setIsSubmitting(true);
